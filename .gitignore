@@ -62,3 +62,27 @@ crashlytics-build.properties
 Assets/Asphalt_materials/
 
 *.psd
+
+Assets/Ext/AdvancedPeoplePack/Material/Colors.psd.meta
+
+Assets/Ext/AdvancedPeoplePack/Material/SkinPresets/Skin1.psd.meta
+
+Assets/Ext/AdvancedPeoplePack/Material/SkinPresets/Skin10.psd.meta
+
+Assets/Ext/AdvancedPeoplePack/Material/SkinPresets/Skin2.psd.meta
+
+Assets/Ext/AdvancedPeoplePack/Material/SkinPresets/Skin3.psd.meta
+
+Assets/Ext/AdvancedPeoplePack/Material/SkinPresets/Skin4.psd.meta
+
+Assets/Ext/AdvancedPeoplePack/Material/SkinPresets/Skin5.psd.meta
+
+Assets/Ext/AdvancedPeoplePack/Material/SkinPresets/Skin6.psd.meta
+
+Assets/Ext/AdvancedPeoplePack/Material/SkinPresets/Skin7.psd.meta
+
+Assets/Ext/AdvancedPeoplePack/Material/SkinPresets/Skin8.psd.meta
+
+Assets/Ext/AdvancedPeoplePack/Material/SkinPresets/Skin9.psd.meta
+
+Assets/Ext/DreamForestTree/Materials/ClearSky.psd.meta
