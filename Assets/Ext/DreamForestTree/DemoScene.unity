@@ -1436,6 +1436,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6779503457088701499, guid: 7d39a68237432ea41ae92c75eb21dcf4, type: 3}
+      propertyPath: m_Height
+      value: 26.851662
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779503457088701499, guid: 7d39a68237432ea41ae92c75eb21dcf4, type: 3}
+      propertyPath: m_Center.x
+      value: -0.05866672
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779503457088701499, guid: 7d39a68237432ea41ae92c75eb21dcf4, type: 3}
+      propertyPath: m_Center.y
+      value: 12.222001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779503457088701499, guid: 7d39a68237432ea41ae92c75eb21dcf4, type: 3}
+      propertyPath: m_Center.z
+      value: -0.4589441
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779503457088701499, guid: 7d39a68237432ea41ae92c75eb21dcf4, type: 3}
+      propertyPath: m_Radius
+      value: 1.0202138
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d39a68237432ea41ae92c75eb21dcf4, type: 3}
 --- !u!1 &762071235
@@ -1565,8 +1585,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
-  _shakeTime: 0.2
-  _cam: {fileID: 1339074166}
 --- !u!64 &782768495
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7574,7 +7592,7 @@ PrefabInstance:
     - target: {fileID: 2334256, guid: 19b412c20413f7647bfa520a3517013c, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 77859c11a5041451bba8e6fade01a8e6, type: 2}
+      objectReference: {fileID: 2100000, guid: 47884c2635835424ead4ea7650a7a4c7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19b412c20413f7647bfa520a3517013c, type: 3}
 --- !u!64 &838347150
