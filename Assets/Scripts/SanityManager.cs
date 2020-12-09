@@ -9,7 +9,8 @@ public class SanityManager : MonoBehaviour
     [SerializeField] GameObject _sanityGroup1, _sanityGroup2, _sanityGroup3;
     [SerializeField] Light _light;
     [SerializeField] WindZone _weather;
-    //[SerializeField] TriggerScript _questProgress;
+    [SerializeField] AmbianceMusic _ambiance;
+    //[SerializeField] SCRIPT DE QUETE _questProgress;
 
 
     void Start()
@@ -27,7 +28,8 @@ public class SanityManager : MonoBehaviour
     {
         if(_sanityLevel == 1)
         {
-            _sanityGroup1.SetActive(true);         
+            _sanityGroup1.SetActive(true);
+            _ambiance.SwitchTo1();
         }
         else if (_sanityLevel == 2)
         {

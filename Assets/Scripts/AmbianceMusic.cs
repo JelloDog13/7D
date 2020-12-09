@@ -10,11 +10,20 @@ public class AmbianceMusic : MonoBehaviour
     void Start()
     {
         _audio = GetComponent<AudioSource>();
+        _audio.clip = _ambiance1;
     }
 
-
-    void Update()
+    public void SwitchTo1()
     {
-        
+        _audio.clip = _ambiance1;
+    }
+    public void SwitchTo2()
+    {
+        _audio.clip = _ambiance2;
+    }
+    public void SwitchTo3()
+    {
+        _audio.clip = _ambiance3;
     }
 }
+
