@@ -5,25 +5,26 @@ using UnityEngine;
 public class AmbianceMusic : MonoBehaviour
 {
     [SerializeField] AudioClip _ambiance1, _ambiance2, _ambiance3;
-    private AudioSource _audio;
+    [SerializeField] AudioSource _audioAmbi, _audioMusic;
+
 
     void Start()
     {
-        _audio = GetComponent<AudioSource>();
-        _audio.clip = _ambiance1;
+        _audioAmbi.clip = _ambiance1;
     }
 
     public void SwitchTo1()
     {
-        _audio.clip = _ambiance1;
+        _audioAmbi.clip = _ambiance1;
     }
     public void SwitchTo2()
     {
-        _audio.clip = _ambiance2;
+        _audioAmbi.clip = _ambiance2;
     }
     public void SwitchTo3()
     {
-        _audio.clip = _ambiance3;
+        _audioAmbi.clip = _ambiance3;
     }
+
 }
 
