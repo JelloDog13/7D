@@ -32,6 +32,12 @@ public class EnemyAnim : MonoBehaviour
 
     }
 
+    public void TakeHit()
+    {
+        _anim.SetInteger("HitRandom", Random.Range(1, 3));
+        _anim.SetTrigger("Hurt");
+    }
+
     private void Move()
     {
         _anim.SetBool("Attack", false);
