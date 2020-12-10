@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
+    [SerializeField] GameObject _subMenu;
+    [SerializeField] Toggle _playToggle;
     [SerializeField] Texture2D _cursor;
+    [SerializeField] float _exitApplicationDelay;
 
     [Header("Panel")]
     [SerializeField] GameObject _panelSettings;
@@ -14,6 +18,11 @@ public class UiManager : MonoBehaviour
     private void Awake()
     {
         Cursor.SetCursor(_cursor, new Vector2(0, 1), CursorMode.Auto);
+    }
+
+    private void Start()
+    {
+        //var setters = Resources.FindObjectsOfTypeAll<>
     }
 
     public void OnClicSettings()
