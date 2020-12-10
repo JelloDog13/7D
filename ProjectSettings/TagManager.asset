@@ -7,6 +7,12 @@ TagManager:
   - Enemy
   - Head
   - Weapon
+  - Target
+  - Metal
+  - ExplosiveBarrel
+  - Flower
+  - DogToy
+  - Logs
   layers:
   - Default
   - TransparentFX
@@ -19,7 +25,7 @@ TagManager:
   - Player
   - Bullet
   - Enemy
-  - 
+  - QuestObject
   - 
   - 
   - 
