@@ -213,6 +213,8 @@ MonoBehaviour:
   _hitPlayerSFX: []
   _isBullet: 1
   _playerDamage: 0
+  _hitFleshVFX: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
+  _hitVFX: {fileID: 1000012142692022, guid: a475880e7da0e9548aa05cb7933752cd, type: 3}
 --- !u!82 &1834962154247689164
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5134,7 +5136,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a67df17391c315142b37a14f9dffc5a1, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

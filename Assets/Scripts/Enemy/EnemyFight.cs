@@ -8,10 +8,11 @@ public class EnemyFight : MonoBehaviour
     [SerializeField] LayerMask _playerMask;
     [SerializeField] int _bulletsToKill;
     [SerializeField] float _meleeRadius;
+    [SerializeField] EnemyAnim _anim;
     [SerializeField] GameObject _weapon;
     [SerializeField] AudioClip[] _gruntSFX, _deathSFX;
 
-    public bool _isInRange;
+    public bool _isInRange, _isHit;
 
     void Start()
     {
@@ -43,6 +44,7 @@ public class EnemyFight : MonoBehaviour
     public void TakeHit()
     {
         _bulletsToKill--;
+        _anim.TakeHit();
         if(_bulletsToKill <= 0)
         {
             if (Random.Range(0, 2) == 1)
@@ -50,7 +52,7 @@ public class EnemyFight : MonoBehaviour
                 AudioSource.PlayClipAtPoint(_gruntSFX[Random.Range(0, _gruntSFX.Length)], transform.position);
             }
             Die();
-        }
+        }      
     }
 
     public void Die()
