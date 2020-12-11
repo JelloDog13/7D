@@ -8,22 +8,25 @@ using UnityEditor;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] GameObject _subMenu;
+    [Header("Menu")]
+    [SerializeField] GameObject _pauseMenu;
     [SerializeField] Toggle _playToggle;
+
+    [Header("Button & Cursor")]
     [SerializeField] Button _continueButton;
     [SerializeField] Texture2D _cursor;
+
+    [Header("Audio")]
     [SerializeField] AudioSource _sfxPlayer;
     [SerializeField] AudioClip _clickClip;
-    [SerializeField] float _exitApplicationDelay;
 
-    [Header("Panel")]
-    [SerializeField] GameObject _panelSettings;
-    [SerializeField] GameObject _panelControls;
-    [SerializeField] GameObject _panelCredits;
+    [Header("Exit")]
+    [SerializeField] float _exitApplicationDelay;
 
     private void Awake()
     {
-        Cursor.SetCursor(_cursor, new Vector2(0, 1), CursorMode.Auto);
+        //Cursor.SetCursor(_cursor, new Vector2(0, 1), CursorMode.Auto);
+        _onPause = false;
     }
 
     private void Start()
@@ -34,13 +37,13 @@ public class UIController : MonoBehaviour
             setter.LoadPrefs();
         }
 
-        _playToggle.onValueChanged.AddListener(isOn =>
-        {
-            if (isOn)
-            {
-                _continueButton.Select();
-            }
-        });
+        //_playToggle.onValueChanged.AddListener(isOn =>
+        //{
+        //    if (isOn)
+        //    {
+        //        _continueButton.Select();
+        //    }
+        //});
 
         var toggles = Resources.FindObjectsOfTypeAll<Toggle>();
         foreach (var toggle in toggles)
@@ -57,14 +60,34 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        //ajouter input pause avec cursor.lockstate = cursor.lock.?? et timeScale = 0
+        if(Input.GetButton("PauseMenu"))
         {
-            if (!EventSystem.current.IsPointerOverGameObject())
-            {
-                _subMenu.SetActive(false);
-                _playToggle.SetIsOnWithoutNotify(false);
+            //if (!EventSystem.current.IsPointerOverGameObject())
+            //{
+            _onPause = true;
+
+                _pauseMenu.SetActive(true);
+                _playToggle.SetIsOnWithoutNotify(true);
                 _playToggle.Select();
-            }
+            //}
+            Debug.Log("pause");
+        }
+
+        if(_continueButton)
+        {
+            _onPause = false;
+        }
+
+        if(_onPause)
+        {
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
@@ -122,43 +145,9 @@ public class UIController : MonoBehaviour
         _lastMousePosition = Input.mousePosition;
     }
 
-    
-
-    public void OnClicSettings()
-    {
-        //si on clique gauche sourie ou bouton A de la manette
-        if(Input.GetMouseButtonDown(0))
-        {
-            _panelSettings.SetActive(true);
-            _panelControls.SetActive(false);
-            _panelCredits.SetActive(false);
-        }
-    }
-
-    public void OnClicControls()
-    {
-        //si on clique gauche sourie ou bouton A de la manette
-        if (Input.GetMouseButtonDown(0))
-        {
-            _panelSettings.SetActive(false);
-            _panelControls.SetActive(true);
-            _panelCredits.SetActive(false);
-        }
-    }
-
-    public void OnClicCredits()
-    {
-        //si on clique gauche sourie ou bouton A de la manette
-        if (Input.GetMouseButtonDown(0))
-        {
-            _panelSettings.SetActive(false);
-            _panelControls.SetActive(false);
-            _panelCredits.SetActive(true);
-        }
-    }
-
     private GameObject _lastSelected;
     private Vector2 _lastMousePosition;
+    private bool _onPause;
 
     private IEnumerator ExitApplicationCoroutine()
     {
