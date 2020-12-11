@@ -19,6 +19,7 @@ public class AmbianceMusic : MonoBehaviour
     void Start()
     {
         _audioAmbi.clip = _ambiance1;
+        _audioAmbi.Play();
     }
 
     public void SwitchTo1()
