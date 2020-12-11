@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d987bc31d7cf554f82106563076f8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixer: {fileID: 0}
+  _mixer: {fileID: 24100000, guid: 362258b0242eb094bb035a32f44e0c9f, type: 2}
   _exposedParameter: sfxVolume
   _volumeCurve:
     serializedVersion: 2
@@ -2285,7 +2285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d987bc31d7cf554f82106563076f8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixer: {fileID: 0}
+  _mixer: {fileID: 24100000, guid: e99a53f557b1bc646b7c08ca6aadf748, type: 2}
   _exposedParameter: musicVolume
   _volumeCurve:
     serializedVersion: 2
@@ -3670,7 +3670,7 @@ AudioSource:
   m_GameObject: {fileID: 1593708101}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 362258b0242eb094bb035a32f44e0c9f, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -3820,7 +3820,7 @@ AudioSource:
   m_GameObject: {fileID: 1693737535}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: e99a53f557b1bc646b7c08ca6aadf748, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
