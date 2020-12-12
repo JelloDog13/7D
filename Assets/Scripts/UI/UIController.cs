@@ -37,13 +37,13 @@ public class UIController : MonoBehaviour
             setter.LoadPrefs();
         }
 
-        //_playToggle.onValueChanged.AddListener(isOn =>
-        //{
-        //    if (isOn)
-        //    {
-        //        _continueButton.Select();
-        //    }
-        //});
+        _playToggle.onValueChanged.AddListener(isOn =>
+        {
+            if (isOn)
+            {
+                _continueButton.Select();
+            }
+        });
 
         var toggles = Resources.FindObjectsOfTypeAll<Toggle>();
         foreach (var toggle in toggles)
@@ -60,38 +60,39 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
-        //si on appuye sur ECHAP ou START alors on ative le menu cursor.lock.?? et timeScale = 0
+        //si on appuye sur ECHAP ou START alors on ative le cursor et timeScale = 0
         if(Input.GetButton("PauseMenu"))
         {
-            //if (!EventSystem.current.IsPointerOverGameObject())
-            //{
-            _onPause = true;
-
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
                 _pauseMenu.SetActive(true);
                 _playToggle.SetIsOnWithoutNotify(true);
                 _playToggle.Select();
-            //}
-            Debug.Log($"OnPause : <color=green>{_onPause}</color>");
+            }
         }
 
-        if(_continueButton)
+        if (_pauseMenu.activeSelf)
+        {
+            _onPause = true;
+            Debug.Log($"OnPause : <color=green>{_onPause}</color>");
+        }
+        else
         {
             _onPause = false;
             Debug.Log($"OnPause : <color=red>{_onPause}</color>");
         }
 
-        if(_onPause)
+        if (_onPause)
         {
-            Time.timeScale = 0;
+            Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
-
-            Debug.Log("TimeScale : <color=red>0</color>");
+            Debug.Log("TimeScale : <color=green>0</color>");
         }
         else
         {
-            Time.timeScale = 1;
+            Time.timeScale = 1f;
             Cursor.lockState = CursorLockMode.Locked;
-            Debug.Log("TimeScale : <color=green>1</color>");
+            Debug.Log("TimeScale : <color=red>1</color>");
         }
     }
 
