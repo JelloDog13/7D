@@ -10,6 +10,7 @@ public class BloodScreen : MonoBehaviour
     {
         _image = GetComponent<Image>();
     }
+
     private void Update()
     {
         
