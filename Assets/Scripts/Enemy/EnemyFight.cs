@@ -59,6 +59,8 @@ public class EnemyFight : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(_deathSFX[Random.Range(0, _deathSFX.Length)], transform.position);
         GetComponentInChildren<RagdollController>().SetRagdoll();
+        var damage = _weapon.GetComponent<DamageDealer>();
+        Destroy(damage);
         _weapon.transform.parent = null;
         _enemy.IsDead();
     }
