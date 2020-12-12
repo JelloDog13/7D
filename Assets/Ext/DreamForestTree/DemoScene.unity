@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 18.35
   m_LinearFogEnd: 569.6
-  m_AmbientSkyColor: {r: 0.3430471, g: 0.3438581, b: 0.3455882, a: 1}
+  m_AmbientSkyColor: {r: 0.28593805, g: 0.3018868, b: 0.3018868, a: 1}
   m_AmbientEquatorColor: {r: 0.77205884, g: 0.77205884, b: 0.77205884, a: 1}
   m_AmbientGroundColor: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 1}
   m_AmbientIntensity: 1.74
@@ -11244,6 +11244,8 @@ MonoBehaviour:
   shakeDuration: 0.2
   shakeAmount: 0.2
   decreaseFactor: 1
+  shaketrue: 0
+  originalPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1339074167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4660889904850796, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
@@ -13184,7 +13186,7 @@ MonoBehaviour:
   _playerDamage: 10
   _hitFleshVFX: {fileID: 0}
   _hitVFX: {fileID: 0}
---- !u!82 &1762229855
+--- !u!82 &1762229861
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
