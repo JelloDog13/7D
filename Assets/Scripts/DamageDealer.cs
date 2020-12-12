@@ -37,6 +37,13 @@ public class DamageDealer : MonoBehaviour
         {
             collision.gameObject.GetComponentInParent<PlayerHealth>().TakeDamage(_playerDamage);
             AudioSource.PlayClipAtPoint(_hitPlayerSFX[Random.Range(0, _hitPlayerSFX.Length)], transform.position);
+            _isHit = true;
         }
+    }
+    private bool _isHit;
+
+    public bool IsHit
+    { 
+        get => _isHit;
     }
 }

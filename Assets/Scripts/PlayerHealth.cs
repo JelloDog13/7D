@@ -7,6 +7,11 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int _maxHealth;
 
+    public int MaxHealth 
+    { 
+        get => _maxHealth;
+    }
+
     void Start()
     {
         
