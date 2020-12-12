@@ -60,7 +60,7 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
-        //ajouter input pause avec cursor.lockstate = cursor.lock.?? et timeScale = 0
+        //si on appuye sur ECHAP ou START alors on ative le menu cursor.lock.?? et timeScale = 0
         if(Input.GetButton("PauseMenu"))
         {
             //if (!EventSystem.current.IsPointerOverGameObject())
@@ -71,23 +71,27 @@ public class UIController : MonoBehaviour
                 _playToggle.SetIsOnWithoutNotify(true);
                 _playToggle.Select();
             //}
-            Debug.Log("pause");
+            Debug.Log($"OnPause : <color=green>{_onPause}</color>");
         }
 
         if(_continueButton)
         {
             _onPause = false;
+            Debug.Log($"OnPause : <color=red>{_onPause}</color>");
         }
 
         if(_onPause)
         {
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
+
+            Debug.Log("TimeScale : <color=red>0</color>");
         }
         else
         {
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
+            Debug.Log("TimeScale : <color=green>1</color>");
         }
     }
 

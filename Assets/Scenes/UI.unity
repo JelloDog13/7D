@@ -2194,7 +2194,6 @@ GameObject:
   - component: {fileID: 660437783}
   - component: {fileID: 660437782}
   - component: {fileID: 660437781}
-  - component: {fileID: 660437785}
   m_Layer: 5
   m_Name: CanvasPauseMenu
   m_TagString: Untagged
@@ -2282,25 +2281,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &660437785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660437780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5db1c66e1cf43fa4bbdc142b2c9c1809, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pauseMenu: {fileID: 0}
-  _playToggle: {fileID: 0}
-  _continueButton: {fileID: 0}
-  _cursor: {fileID: 2800000, guid: ff88be84254fb1f4b9a81a27ae0b2e81, type: 3}
-  _sfxPlayer: {fileID: 0}
-  _clickClip: {fileID: 0}
-  _exitApplicationDelay: 0
 --- !u!1 &698093057
 GameObject:
   m_ObjectHideFlags: 0

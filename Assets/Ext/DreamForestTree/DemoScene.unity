@@ -12245,6 +12245,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1881224282340372, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1913962758345804, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -12255,6 +12259,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1934338873517210, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1934338873517210, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1958678530823060, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
@@ -14704,7 +14712,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.44014046, y: -0.000000025322151, z: -3.081488e-33}
+  m_ConnectedAnchor: {x: 150.102, y: 6.9502335, z: 129.04361}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -15959,7 +15967,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0.04479616, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.08017862, y: 0.04332189, z: 0}
+  m_ConnectedAnchor: {x: 149.93312, y: 8.508941, z: 129.14896}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
