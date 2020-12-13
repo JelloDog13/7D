@@ -25,16 +25,19 @@ public class AmbianceMusic : MonoBehaviour
     public void SwitchTo1()
     {
         _audioAmbi.clip = _ambiance1;
+        _audioAmbi.Play();
     }
 
     public void SwitchTo2()
     {
         _audioAmbi.clip = _ambiance2;
+        _audioAmbi.Play();
     }
 
     public void SwitchTo3()
     {
         _audioAmbi.clip = _ambiance3;
+        _audioAmbi.Play();
     }
 
 }
