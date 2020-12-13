@@ -32,7 +32,6 @@ public class SanityManager : MonoBehaviour
         {
             IncreaseSanity();
         }
-        //if(new quest) => Switch level
     }
 
     private void SwitchSanityLevel()
@@ -50,8 +49,6 @@ public class SanityManager : MonoBehaviour
             _weather.SetLevel2();
             _light.intensity = 1;
             Lightmapping.lightingSettings = _light2;
-
-            //+ de vent
         }
         else if (_sanityLevel == 3)
         {
@@ -61,8 +58,6 @@ public class SanityManager : MonoBehaviour
             _ambiance.SwitchTo3();
             _weather.SetLevel3();
             Lightmapping.lightingSettings = _light3;
-            //light modif
-            //tempête
         }
     }
 }
