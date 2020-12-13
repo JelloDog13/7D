@@ -13,7 +13,7 @@ public class BloodScreen : MonoBehaviour
     {
         _image = GetComponent<Image>();
         _alpha = new Color(255f, 255f, 255f, 0f);
-        _image.color= _alpha;
+        _image.color = _alpha;
     }
 
     private void Update()
@@ -21,18 +21,32 @@ public class BloodScreen : MonoBehaviour
         if(_playerHealth.IsHit)
         {
             Debug.Log("TOUCHER!!!!!");
-            //_image.DOColor(endValue: new Color(255f, 255f, 255f, 255f), duration: 2).SetEase(Ease.Flash);
-            _image.DOFade(255f, 1.5f);
+            ApplySequenceHit();
         }
 
         if(_playerHealth.MaxHealth <= _dangerZone)
         {
             Debug.Log("TU VAS CREVER!!!!!");
-            _image.DOColor(endValue: new Color(255f, 255f, 255f, 255f), duration: 2).SetEase(Ease.Flash);
+            ApplySequenceDangerZone();
         }
     }
 
+    private void ApplySequenceHit()
+    {
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(_image.DOFade(endValue: 0.5f, duration: 0.5f));
+        sequence.PrependInterval(0.2f);
+        sequence.Append(_image.DOFade(endValue: 0f, duration: 0.5f));
+    }
+
+    private void ApplySequenceDangerZone()
+    {
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(_image.DOFade(endValue: 0.5f, duration: 0.5f));
+        sequence.PrependInterval(0.2f);
+        sequence.Append(_image.DOFade(endValue: 0f, duration: 0.5f));
+    }
+
     private Image _image;
-    private Color _color;
     private Color _alpha;
 }
