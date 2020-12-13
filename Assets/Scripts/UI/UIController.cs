@@ -23,6 +23,9 @@ public class UIController : MonoBehaviour
     [Header("Exit")]
     [SerializeField] float _exitApplicationDelay;
 
+    [Header("Player")]
+    [SerializeField] GameObjectVariable _playerGameObjectVariable;
+
     private void Awake()
     {
         //Cursor.SetCursor(_cursor, new Vector2(0, 1), CursorMode.Auto);
@@ -66,9 +69,14 @@ public class UIController : MonoBehaviour
             if (!EventSystem.current.IsPointerOverGameObject())
             {
                 _pauseMenu.SetActive(true);
+                _playerGameObjectVariable.value.SetActive(false);
                 _playToggle.SetIsOnWithoutNotify(true);
                 _playToggle.Select();
             }
+        }
+        else
+        {
+            _playerGameObjectVariable.value.SetActive(true);
         }
 
         if (_pauseMenu.activeSelf)
