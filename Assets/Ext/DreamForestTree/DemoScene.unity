@@ -11822,12 +11822,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24822d6a0c4dece43929b2c439511ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camTransform: {fileID: 0}
-  shakeDuration: 0
-  shakeAmount: 0.7
-  decreaseFactor: 1
-  shaketrue: 0
-  originalPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1339074167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4660889904850796, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
@@ -13318,6 +13312,10 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82643139687027346, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 362258b0242eb094bb035a32f44e0c9f, type: 2}
     - target: {fileID: 114352007083497230, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: movementSmoothness
       value: 0

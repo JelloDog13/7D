@@ -540,7 +540,19 @@ MonoBehaviour:
   m_Value: 0.65
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 100451674}
+        m_TargetAssemblyTypeName: UISliderVolumeSetter, Assembly-CSharp
+        m_MethodName: ChangeVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &100451674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,27 +566,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mixer: {fileID: 24100000, guid: 362258b0242eb094bb035a32f44e0c9f, type: 2}
-  _exposedParameter: sfxVolume
+  _exposedParameter: Sfx
   _volumeCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
+      value: -80
+      inSlope: 251.94931
+      outSlope: 251.94931
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.035906643
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -2.6328795
+      outSlope: -2.6328795
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.1449731
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -591,7 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b506b49b1775d845bdc3820ecaf4a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settingName: sfxVolume
+  _settingName: Sfx
   _defaultValue: 0.666
 --- !u!1 &129803960
 GameObject:
@@ -2414,10 +2426,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.557
+  m_Value: 0.613
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 698093060}
+        m_TargetAssemblyTypeName: UISliderVolumeSetter, Assembly-CSharp
+        m_MethodName: ChangeVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &698093060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2431,27 +2455,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mixer: {fileID: 24100000, guid: e99a53f557b1bc646b7c08ca6aadf748, type: 2}
-  _exposedParameter: musicVolume
+  _exposedParameter: Music
   _volumeCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
+      value: -80
+      inSlope: 251.94931
+      outSlope: 251.94931
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.035906643
+    - serializedVersion: 3
+      time: 0.34584147
+      value: -3.8754606
+      inSlope: 27.597784
+      outSlope: 27.597784
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.19990876
+      outWeight: 0.12313513
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 6.1993446
+      outSlope: 6.1993446
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.18470013
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2468,7 +2501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b506b49b1775d845bdc3820ecaf4a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settingName: musicVolume
+  _settingName: Music
   _defaultValue: 0.666
 --- !u!1 &710521468
 GameObject:
@@ -4384,7 +4417,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: e99a53f557b1bc646b7c08ca6aadf748, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d4e2680343177c2458f1760a6d4caad6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
