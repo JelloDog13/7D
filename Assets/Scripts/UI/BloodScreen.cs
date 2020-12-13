@@ -27,7 +27,7 @@ public class BloodScreen : MonoBehaviour
         if(_playerHealth.MaxHealth <= _dangerZone)
         {
             Debug.Log("TU VAS CREVER!!!!!");
-            ApplySequenceDangerZone();
+            StartCoroutine(DelayDangerZoneAnimation());
         }
     }
 
@@ -46,6 +46,12 @@ public class BloodScreen : MonoBehaviour
         sequence.PrependInterval(0.2f);
         sequence.Append(_image.DOFade(endValue: 0f, duration: 0.5f));
         sequence.SetLoops(4, LoopType.Yoyo).SetSpeedBased();
+    }
+
+    IEnumerator DelayDangerZoneAnimation()
+    {
+        ApplySequenceDangerZone();
+        yield return new WaitForSeconds(0.1f);
     }
 
     private Image _image;
