@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 89b8bb4f736f97d40aef421f77fda18b
+=======
+<<<<<<< HEAD
+guid: 6b16c0505da10444d833eb3d1971298a
+=======
+guid: 89b8bb4f736f97d40aef421f77fda18b
+>>>>>>> main
+>>>>>>> QuestAndPickUp
 TextureImporter:
   fileIDToRecycleName:
     21300000: EmojiOne_0

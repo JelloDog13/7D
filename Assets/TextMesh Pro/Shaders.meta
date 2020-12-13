@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: a361a8d2a0568f64b93067dcb537a463
+=======
+<<<<<<< HEAD
+guid: 0a0cb0d2733f2fb44bb27c36803364ac
+=======
+guid: a361a8d2a0568f64b93067dcb537a463
+>>>>>>> main
+>>>>>>> QuestAndPickUp
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

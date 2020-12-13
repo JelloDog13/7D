@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 1f1910ffc2c562a47af3381428b16dfe
+=======
+<<<<<<< HEAD
+guid: 438f8b008a1faf744992379c3a42006f
+=======
+guid: 1f1910ffc2c562a47af3381428b16dfe
+>>>>>>> main
+>>>>>>> QuestAndPickUp
 timeCreated: 1425440388
 licenseType: Store
 TextScriptImporter:

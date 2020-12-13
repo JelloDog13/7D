@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 350a06433b2c49b4591461a371967e44
+=======
+<<<<<<< HEAD
+guid: 5eb21646b5bbde9439302e426a27d414
+=======
+guid: 350a06433b2c49b4591461a371967e44
+>>>>>>> main
+>>>>>>> QuestAndPickUp
 TextScriptImporter:
   externalObjects: {}
   userData: 

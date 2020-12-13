@@ -2329,6 +2329,7 @@ GameObject:
   - component: {fileID: 660437783}
   - component: {fileID: 660437782}
   - component: {fileID: 660437781}
+  - component: {fileID: 660437785}
   m_Layer: 5
   m_Name: CanvasPauseMenu
   m_TagString: Untagged

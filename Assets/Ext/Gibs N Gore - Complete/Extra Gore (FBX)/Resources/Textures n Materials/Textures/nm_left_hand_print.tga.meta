@@ -8,7 +8,11 @@ TextureImporter:
     mipMapMode: 0
     enableMipMap: 1
     sRGBTexture: 0
+<<<<<<< HEAD
     linearTexture: 1
+=======
+    linearTexture: 0
+>>>>>>> QuestAndPickUp
     fadeOut: 0
     borderMipMap: 0
     mipMapsPreserveCoverage: 0
@@ -17,7 +21,11 @@ TextureImporter:
     mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
+<<<<<<< HEAD
     externalNormalMap: 1
+=======
+    externalNormalMap: 0
+>>>>>>> QuestAndPickUp
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
@@ -28,8 +36,13 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
+<<<<<<< HEAD
   textureFormat: -1
   maxTextureSize: 1024
+=======
+  textureFormat: 1
+  maxTextureSize: 2048
+>>>>>>> QuestAndPickUp
   textureSettings:
     serializedVersion: 2
     filterMode: -1
@@ -59,11 +72,19 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
+<<<<<<< HEAD
   applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 1024
+=======
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+>>>>>>> QuestAndPickUp
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1

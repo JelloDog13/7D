@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 541995c58dc45fe42aebc016c9320c91
+=======
+<<<<<<< HEAD
+guid: 67b68390da9b6c94d937611c2e83b2aa
+=======
+guid: 541995c58dc45fe42aebc016c9320c91
+>>>>>>> main
+>>>>>>> QuestAndPickUp
 timeCreated: 1432805430
 licenseType: Store
 NativeFormatImporter:

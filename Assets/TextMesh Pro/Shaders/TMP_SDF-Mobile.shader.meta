@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 12b1f4ced17d0674492a4e159cbca8b8
+=======
+<<<<<<< HEAD
+guid: 166bbaa65b2e74143aa863d8722c58ce
+=======
+guid: 12b1f4ced17d0674492a4e159cbca8b8
+>>>>>>> main
+>>>>>>> QuestAndPickUp
 ShaderImporter:
   externalObjects: {}
   defaultTextures: []
