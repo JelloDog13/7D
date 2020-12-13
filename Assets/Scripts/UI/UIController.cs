@@ -74,25 +74,25 @@ public class UIController : MonoBehaviour
         if (_pauseMenu.activeSelf)
         {
             _onPause = true;
-            Debug.Log($"OnPause : <color=green>{_onPause}</color>");
+            //Debug.Log($"OnPause : <color=green>{_onPause}</color>");
         }
         else
         {
             _onPause = false;
-            Debug.Log($"OnPause : <color=red>{_onPause}</color>");
+            //Debug.Log($"OnPause : <color=red>{_onPause}</color>");
         }
 
         if (_onPause)
         {
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
-            Debug.Log("TimeScale : <color=green>0</color>");
+            //Debug.Log("TimeScale : <color=green>0</color>");
         }
         else
         {
             Time.timeScale = 1f;
             Cursor.lockState = CursorLockMode.Locked;
-            Debug.Log("TimeScale : <color=red>1</color>");
+            //Debug.Log("TimeScale : <color=red>1</color>");
         }
     }
 

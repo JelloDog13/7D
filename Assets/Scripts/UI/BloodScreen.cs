@@ -7,7 +7,6 @@ using DG.Tweening;
 public class BloodScreen : MonoBehaviour
 {
     [SerializeField] PlayerHealth _playerHealth;
-    [SerializeField] DamageDealer _damageDealer;
     [SerializeField] int _dangerZone = 10;
 
     private void Awake()
@@ -19,14 +18,16 @@ public class BloodScreen : MonoBehaviour
 
     private void Update()
     {
-        if(_damageDealer.IsHit)
+        if(_playerHealth.IsHit)
         {
-            //DOTween.To(getter: () => _image.color, setter: x => _image.color = x, endValue: new Color(255f, 255f, 255f, 255f), duration: 2);
-            _image.DOColor(endValue: new Color(255f, 255f, 255f, 255f), duration: 2).SetEase(Ease.Flash);
+            Debug.Log("TOUCHER!!!!!");
+            //_image.DOColor(endValue: new Color(255f, 255f, 255f, 255f), duration: 2).SetEase(Ease.Flash);
+            _image.DOFade(255f, 1.5f);
         }
 
         if(_playerHealth.MaxHealth <= _dangerZone)
         {
+            Debug.Log("TU VAS CREVER!!!!!");
             _image.DOColor(endValue: new Color(255f, 255f, 255f, 255f), duration: 2).SetEase(Ease.Flash);
         }
     }
