@@ -13,6 +13,7 @@ public class SanityManager : MonoBehaviour
     [SerializeField] WindLevel _weather;
     [SerializeField] AmbianceMusic _ambiance;
     [SerializeField] LightingSettings _light1, _light2, _light3;
+    [SerializeField] Color32 _nightLightColor, _stormLightColor;
     [SerializeField] EnnemySpawner _ennemySpawner;
     [SerializeField] int _wave1, _wave2, _wave3;
 
@@ -52,6 +53,7 @@ public class SanityManager : MonoBehaviour
             _ambiance.SwitchTo2();
             _weather.SetLevel2();
             _light.intensity = 1;
+            _light.color = _nightLightColor;
             Lightmapping.lightingSettings = _light2;
             _ennemySpawner.SpawnEnnemies(_wave2);
         }
@@ -61,6 +63,8 @@ public class SanityManager : MonoBehaviour
             _cabane2.SetActive(true);
             //_sanityGroup3.SetActive(true);
             _ambiance.SwitchTo3();
+            _light.intensity = 0.2f;
+            _light.color = _stormLightColor;
             _weather.SetLevel3();
             Lightmapping.lightingSettings = _light3;
             _ennemySpawner.SpawnEnnemies(_wave3);
