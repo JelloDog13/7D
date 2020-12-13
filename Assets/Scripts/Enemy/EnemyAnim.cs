@@ -18,7 +18,6 @@ public class EnemyAnim : MonoBehaviour
         
     }
 
-
     void Update()
     {
         if (_fight._isInRange)
@@ -29,7 +28,12 @@ public class EnemyAnim : MonoBehaviour
         {
             Move();
         }
+    }
 
+    public void TakeHit()
+    {
+        _anim.SetInteger("HitRandom", Random.Range(1, 3));
+        _anim.SetTrigger("Hurt");
     }
 
     private void Move()

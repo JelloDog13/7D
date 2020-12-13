@@ -210,9 +210,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9130e66e3d174dc42b97bc4f54df00a3, type: 3}
   - {fileID: 8300000, guid: 679ede2fb2e352c45a3281b6c1f3af88, type: 3}
   - {fileID: 8300000, guid: 041e9c90ad0ea0b4d99f01055a377468, type: 3}
-  _hitPlayerSFX: []
+  _hitPlayerSFX:
+  - {fileID: 8300000, guid: 8108f9f361b5f4504bb633c5b4a591e1, type: 3}
+  - {fileID: 8300000, guid: 83f36cd4488e844a382ea1b1bbd0dacd, type: 3}
+  - {fileID: 8300000, guid: d68117c78bc3f481691aedc30eba7683, type: 3}
   _isBullet: 1
   _playerDamage: 0
+  _hitFleshVFX: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
+  _hitVFX: {fileID: 1000012142692022, guid: a475880e7da0e9548aa05cb7933752cd, type: 3}
 --- !u!82 &1834962154247689164
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5134,7 +5139,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a67df17391c315142b37a14f9dffc5a1, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

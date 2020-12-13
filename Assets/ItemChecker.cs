@@ -14,6 +14,7 @@ public class ItemChecker : MonoBehaviour
     [SerializeField] LayerMask _isItAnInteractableObject;
     [SerializeField] Transform _rayStartPos;
     [SerializeField] public RaycastHit[] _hitBuffer = new RaycastHit[1];
+    public Collectible _targetObject;
 
     #endregion
 
@@ -27,6 +28,18 @@ public class ItemChecker : MonoBehaviour
     public bool ItemCheck()
     {
         int rayHitCount = Physics.RaycastNonAlloc(_rayStartPos.position, transform.TransformDirection(Vector3.forward), _hitBuffer, _checkDistance, _isItAnInteractableObject);
+        
         return rayHitCount > 0;
     }
+
+    public string RaycastTag()
+    {
+        for (int i = 0; i < _hitBuffer.Length; i++)
+        { 
+            _hitBuffer[i].transform.TryGetComponent<Collectible>(out _targetObject);
+            return _hitBuffer[i].transform.tag;
+        }
+        return null;
+    }
+
 }

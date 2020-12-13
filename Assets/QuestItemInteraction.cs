@@ -6,16 +6,32 @@ using TMPro;
 public class QuestItemInteraction : Interaction
 {
     [SerializeField] TMP_Text _pickUpItemText;
-    private void InteractWithQuestObject(string tag)
+    [SerializeField] Animator _fade;
+    private bool _isFading;
+
+    private void ShowText()
     {
-        base.InteractWithObject(tag);
-        _pickUpItemText.text = "Press V to pick up" + " " + "the" + " " + tag;
+            _pickUpItemText.text = "Press V to pick up" + " " + "the" + " " + base._targetTag;
     }
+
+    private void Fade()
+    {
+        _fade.Play("Fade");
+    }
+
 
     private void Update()
     {
-        InteractWithQuestObject("Flower");
-        InteractWithQuestObject("DogToy");
-        InteractWithQuestObject("Logs");
+        if (base.CanInteract())
+        {
+            ShowText();
+        }
+        else _pickUpItemText.text = "";
+
+        if (base._isInteracting)
+        {
+            Fade();
+        }
+
     }
 }
