@@ -42,9 +42,10 @@ public class BloodScreen : MonoBehaviour
     private void ApplySequenceDangerZone()
     {
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(_image.DOFade(endValue: 0.5f, duration: 0.5f));
+        sequence.Append(_image.DOFade(endValue: 0.9f, duration: 0.5f));
         sequence.PrependInterval(0.2f);
         sequence.Append(_image.DOFade(endValue: 0f, duration: 0.5f));
+        sequence.SetLoops(4, LoopType.Yoyo).SetSpeedBased();
     }
 
     private Image _image;
