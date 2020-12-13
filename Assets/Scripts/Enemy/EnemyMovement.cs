@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using FPSControllerLPFP;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     private void Awake()
     {
         _onWander = true;
+        _playerPos = FindObjectOfType<FpsControllerLPFP>().transform;
     }
 
     void Start()

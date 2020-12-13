@@ -16,7 +16,7 @@ public class EnemyFight : MonoBehaviour
 
     void Start()
     {
-        
+        _anim = GetComponentInChildren<EnemyAnim>();
     }
 
     void Update()
