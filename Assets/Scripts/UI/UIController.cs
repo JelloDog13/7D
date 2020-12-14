@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
 {
     [Header("Menu")]
     [SerializeField] GameObject _pauseMenu;
+    [SerializeField] GameObject _mainMenu;
     [SerializeField] Toggle _playToggle;
 
     [Header("Button & Cursor")]
@@ -23,12 +24,19 @@ public class UIController : MonoBehaviour
     [Header("Exit")]
     [SerializeField] float _exitApplicationDelay;
 
-    [Header("Player")]
+    [Header("GameObject")]
+    [SerializeField] GameObject _cameraUI;
+    [SerializeField] GameObjectVariable _cameraMain;
     [SerializeField] GameObjectVariable _playerGameObjectVariable;
 
     private void Awake()
     {
-        //Cursor.SetCursor(_cursor, new Vector2(0, 1), CursorMode.Auto);
+        //on initialise le menu principal et les cameras
+        _mainMenu.SetActive(true);
+        _cameraUI.SetActive(true);
+        _cameraMain.value.SetActive(false);
+        //on désactive le cursorLock
+        Cursor.lockState = CursorLockMode.None;
         _onPause = false;
     }
 
@@ -104,6 +112,16 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public void SwitchCamera()
+    {
+        //on déactive le menu principal et on passe sur la MainCamera
+        _mainMenu.SetActive(false);
+        _cameraUI.SetActive(false);
+        _cameraMain.value.SetActive(true);
+        //on active le cursorLock
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     public void ExitApplication()
     {
         StartCoroutine(ExitApplicationCoroutine());
@@ -125,6 +143,7 @@ public class UIController : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         QualitySettings.shadowDistance = 40;
     }
+
     private void ControlSettings()
     {
         // Remapping des touches
@@ -165,10 +184,8 @@ public class UIController : MonoBehaviour
     private IEnumerator ExitApplicationCoroutine()
     {
         yield return new WaitForSeconds(_exitApplicationDelay);
-#if UNITY_EDITOR
-        EditorApplication.ExitPlaymode();
-#else
+
+        Debug.Log("Quit Game");
         Application.Quit();
-#endif
     }
 }

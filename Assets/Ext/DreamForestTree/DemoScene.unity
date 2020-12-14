@@ -10673,7 +10673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e48559b4d4411af47a8d7d5644fd5cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerGameObject: {fileID: 11400000, guid: 6998d0d3685f03d4ea4bdebb0e57e460, type: 2}
+  _gameObjectVariable: {fileID: 0}
 --- !u!1001 &913660692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12881,6 +12881,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4660889904850796, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
   m_PrefabInstance: {fileID: 1646353400}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1339074168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339074164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48559b4d4411af47a8d7d5644fd5cd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObjectVariable: {fileID: 11400000, guid: 5e0b08a4b565c3c4e9cd7dd07e33020c, type: 2}
 --- !u!64 &1340100778
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14352,9 +14365,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1050015137284376, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1273765395313544, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_Name
       value: PLAYER
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640923967087210, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4523690870132846, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17650,7 +17671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2693279622244200933, guid: 66390a6ce745674438b494ac4112dc64, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66390a6ce745674438b494ac4112dc64, type: 3}

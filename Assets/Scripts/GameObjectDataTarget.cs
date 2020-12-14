@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class PlayerGOTarget : MonoBehaviour
+public class GameObjectDataTarget : MonoBehaviour
 {
-    [SerializeField] GameObjectVariable _playerGameObject;
+    [SerializeField] GameObjectVariable _gameObjectVariable;
 
     void Start()
     {
@@ -11,6 +11,6 @@ public class PlayerGOTarget : MonoBehaviour
             gameObject.GetComponent<GameObject>();
         }
         
-        _playerGameObject.value = gameObject;
+        _gameObjectVariable.value = gameObject;
     }
 }
