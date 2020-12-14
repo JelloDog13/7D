@@ -55,12 +55,14 @@ public class FinalManager : MonoBehaviour
         _canHang = true;
     }
 
-    IEnumerator HangYourselfCoroutine()//Cette Coroutine sert à attendre la fin du switch entre la vcam3 et la vcam1
+    IEnumerator HangYourselfCoroutine()//Cette Coroutine sert à attendre la fin du switch de la vcam 1 à la vcam3 et de lancer le dernier travelling
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
 
         _playerTransform.position = _hangTransform.position;
         _playerTransform.rotation = _hangTransform.rotation;
+
+        yield return new WaitForSeconds(1);
         _CM3.gameObject.SetActive(false);
         _CM1.gameObject.SetActive(true);
         _CM1.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 5;
