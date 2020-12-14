@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] GameObject _cameraUI;
+
     void Start()
     {
-        
+        //on désactive le cursorLock
+        Cursor.lockState = CursorLockMode.None;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

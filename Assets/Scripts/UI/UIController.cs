@@ -27,6 +27,7 @@ public class UIController : MonoBehaviour
     [Header("GameObject")]
     [SerializeField] GameObject _cameraUI;
     [SerializeField] GameObjectVariable _cameraMain;
+    [SerializeField] GameObjectVariable _GunCamera;
     [SerializeField] GameObjectVariable _playerGameObjectVariable;
 
     private void Awake()
@@ -34,10 +35,16 @@ public class UIController : MonoBehaviour
         //on initialise le menu principal et les cameras
         _mainMenu.SetActive(true);
         _cameraUI.SetActive(true);
+        _cameraUI.GetComponent<AudioListener>().enabled = true;
+        if(_GunCamera.value != null)
+        {
+            _GunCamera.value.GetComponent<AudioListener>().enabled = false;
+        }
+        
         //_cameraMain.value.SetActive(false);
 
         //on désactive le cursorLock
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.None;
     }
 
     private void Start()
@@ -81,7 +88,6 @@ public class UIController : MonoBehaviour
                 _pauseMenu.SetActive(true);
                 _cameraUI.SetActive(true);
                 _cameraMain.value.SetActive(true);
-                Debug.Log("pause menu");
                 _playerGameObjectVariable.value.SetActive(false);
                 _playToggle.SetIsOnWithoutNotify(true);
                 _playToggle.Select();
@@ -95,6 +101,8 @@ public class UIController : MonoBehaviour
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
 
+            _cameraUI.GetComponent<AudioListener>().enabled = true;
+            _GunCamera.value.GetComponent<AudioListener>().enabled = false;
             //Debug.Log("TimeScale : <color=green>0</color>");
             //Debug.Log($"OnPause : <color=green>{_onPause}</color>");
         }
@@ -103,7 +111,8 @@ public class UIController : MonoBehaviour
             Time.timeScale = 1f;
             Cursor.lockState = CursorLockMode.Locked;
             _playerGameObjectVariable.value.SetActive(true);
-
+            _cameraUI.GetComponent<AudioListener>().enabled = false;
+            _GunCamera.value.GetComponent<AudioListener>().enabled = true;
             //Debug.Log("TimeScale : <color=red>1</color>");
             //Debug.Log($"OnPause : <color=red>{_onPause}</color>");
         }
@@ -111,11 +120,12 @@ public class UIController : MonoBehaviour
 
     public void SwitchCamera()
     {
-        //on déactive le menu principal et on passe sur la MainCamera
+        //on désactive le menu principal et on passe sur la MainCamera
         _mainMenu.SetActive(false);
         _cameraUI.SetActive(false);
         _cameraMain.value.SetActive(true);
-
+        _cameraUI.GetComponent<AudioListener>().enabled = false;
+        _GunCamera.value.GetComponent<AudioListener>().enabled = true;
         //on active le cursorLock
         Cursor.lockState = CursorLockMode.Locked;
     }
