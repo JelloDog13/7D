@@ -34,15 +34,17 @@ public class UIController : MonoBehaviour
         //on initialise le menu principal et les cameras
         _mainMenu.SetActive(true);
         _cameraUI.SetActive(true);
-        _cameraMain.value.SetActive(false);
+        //_cameraMain.value.SetActive(false);
+
         //on désactive le cursorLock
         Cursor.lockState = CursorLockMode.None;
-        _onPause = false;
     }
 
     private void Start()
     {
+        
         var setters = Resources.FindObjectsOfTypeAll<UIPreferencesManager>();
+        //charge les preferences
         foreach(var setter in setters)
         {
             setter.LoadPrefs();
@@ -74,41 +76,36 @@ public class UIController : MonoBehaviour
         //si on appuye sur ECHAP ou START alors on ative le cursor et timeScale = 0
         if(Input.GetButton("PauseMenu"))
         {
-            if (!EventSystem.current.IsPointerOverGameObject())
-            {
+            //if (!EventSystem.current.IsPointerOverGameObject())
+            //{
                 _pauseMenu.SetActive(true);
+                _cameraUI.SetActive(true);
+                _cameraMain.value.SetActive(true);
+                Debug.Log("pause menu");
                 _playerGameObjectVariable.value.SetActive(false);
                 _playToggle.SetIsOnWithoutNotify(true);
                 _playToggle.Select();
-            }
+            //}
         }
-        else
-        {
-            _playerGameObjectVariable.value.SetActive(true);
-        }
+            
+        
 
         if (_pauseMenu.activeSelf)
         {
-            _onPause = true;
-            //Debug.Log($"OnPause : <color=green>{_onPause}</color>");
-        }
-        else
-        {
-            _onPause = false;
-            //Debug.Log($"OnPause : <color=red>{_onPause}</color>");
-        }
-
-        if (_onPause)
-        {
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
+
             //Debug.Log("TimeScale : <color=green>0</color>");
+            //Debug.Log($"OnPause : <color=green>{_onPause}</color>");
         }
         else
         {
             Time.timeScale = 1f;
             Cursor.lockState = CursorLockMode.Locked;
+            _playerGameObjectVariable.value.SetActive(true);
+
             //Debug.Log("TimeScale : <color=red>1</color>");
+            //Debug.Log($"OnPause : <color=red>{_onPause}</color>");
         }
     }
 
@@ -118,6 +115,7 @@ public class UIController : MonoBehaviour
         _mainMenu.SetActive(false);
         _cameraUI.SetActive(false);
         _cameraMain.value.SetActive(true);
+
         //on active le cursorLock
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -179,7 +177,6 @@ public class UIController : MonoBehaviour
 
     private GameObject _lastSelected;
     private Vector2 _lastMousePosition;
-    private bool _onPause;
 
     private IEnumerator ExitApplicationCoroutine()
     {
