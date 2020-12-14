@@ -124,6 +124,7 @@ public class UIController : MonoBehaviour
         _mainMenu.SetActive(false);
         _cameraUI.SetActive(false);
         _cameraMain.value.SetActive(true);
+        Debug.Log("main cam : " + _cameraMain.value);
         _cameraUI.GetComponent<AudioListener>().enabled = false;
         _GunCamera.value.GetComponent<AudioListener>().enabled = true;
         //on active le cursorLock
