@@ -7,8 +7,16 @@ public class QuestZone : MonoBehaviour
     [SerializeField] int _questNumber;
     [SerializeField] PlayerProgress _player;
     [SerializeField] GameObject _targetObject;
+    [SerializeField] AudioClip _questSFX;
     private bool _questDone;
     private bool _textAvailable = true;
+    private AudioSource _sound;
+
+    private void Start()
+    {
+        _sound = GetComponent<AudioSource>();
+        _sound.clip = _questSFX;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +24,8 @@ public class QuestZone : MonoBehaviour
         {
             Debug.Log("Quest DONE !");
             _player.RemoveItem(_questNumber);
-            if (_player.SanityLevel() != 3)
+            _sound.Play();
+            if (_player.SanityLevel() >= 3)
             {
                 _targetObject.SetActive(true);
             }
@@ -31,7 +40,6 @@ public class QuestZone : MonoBehaviour
         if (_textAvailable)
         {
             StartCoroutine(TextCooldown());
-            //TEXTE BADASS
         }
     }
 
