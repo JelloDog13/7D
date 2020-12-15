@@ -41,10 +41,10 @@ public class UIController : MonoBehaviour
             _GunCamera.value.GetComponent<AudioListener>().enabled = false;
         }
         
-        //_cameraMain.value.SetActive(false);
+        _cameraMain.value.SetActive(false);
 
         //on désactive le cursorLock
-        //Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void Start()
