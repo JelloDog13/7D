@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject _cameraUI;
 
-    void Start()
+    void Awake()
     {
         //on désactive le cursorLock
         Cursor.lockState = CursorLockMode.None;
