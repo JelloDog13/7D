@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class QuestZone : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class QuestZone : MonoBehaviour
     [SerializeField] PlayerProgress _player;
     [SerializeField] GameObject _targetObject;
     [SerializeField] AudioClip _questSFX;
+    [SerializeField] TMP_Text _questText;
     private bool _questDone;
     private bool _textAvailable = true;
     private AudioSource _sound;
@@ -25,6 +28,7 @@ public class QuestZone : MonoBehaviour
             Debug.Log("Quest DONE !");
             _player.RemoveItem(_questNumber);
             _sound.Play();
+            _questText.gameObject.SetActive(false);
             if (_player.SanityLevel() >= 3)
             {
                 _targetObject.SetActive(true);

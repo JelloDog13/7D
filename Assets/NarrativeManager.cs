@@ -8,6 +8,7 @@ public class NarrativeManager : MonoBehaviour
 {
     [SerializeField] TMP_Text _texte1;
     [SerializeField] TMP_Text _texte2;
+    [SerializeField] GameObject _questPanel;
     [SerializeField] AudioClip _angryCrowdSound;
     [SerializeField] Animator _fade;
     [SerializeField] AudioSource _narrativeAudioSource;
@@ -41,7 +42,8 @@ public class NarrativeManager : MonoBehaviour
         _fade.gameObject.SetActive(true);
         _fade.Play("FadeIn");
         _narrativeAudioSource.PlayOneShot(_angryCrowdSound);
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(4);
+        _questPanel.SetActive(true);
         _fade.Play("FadeOut");
         _texte2.gameObject.SetActive(false);
         _introIsFinished = true;        

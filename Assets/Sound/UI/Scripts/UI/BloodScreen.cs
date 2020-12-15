@@ -8,6 +8,7 @@ public class BloodScreen : MonoBehaviour
 {
     [SerializeField] PlayerHealth _playerHealth;
     [SerializeField] int _dangerZone = 10;
+    private bool _isBleeding;
 
     private void Awake()
     {
@@ -24,8 +25,9 @@ public class BloodScreen : MonoBehaviour
             ApplySequenceHit();
         }
 
-        if(_playerHealth.MaxHealth <= _dangerZone)
+        if(_playerHealth.MaxHealth <= _dangerZone && !_isBleeding)
         {
+            _isBleeding = true;
             Debug.Log("TU VAS CREVER!!!!!");
             StartCoroutine(DelayDangerZoneAnimation());
         }

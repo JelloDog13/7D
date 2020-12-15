@@ -109,6 +109,7 @@ public class EnemyMovement : MonoBehaviour
         return false;
     }
 
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
