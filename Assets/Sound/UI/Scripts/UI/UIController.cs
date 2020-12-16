@@ -45,7 +45,7 @@ public class UIController : MonoBehaviour
             _GunCamera.value.GetComponent<AudioListener>().enabled = false;
         }
 
-        //if(_cameraMain.value.activeSelf)
+        //if (_cameraUI.activeSelf)
         //{
         //    _cameraMain.value.SetActive(false);
         //}
