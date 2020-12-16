@@ -59,7 +59,8 @@ public class SanityManager : MonoBehaviour
         {
             _cabane1.SetActive(false);
             _cabane2.SetActive(true);
-            //_sanityGroup3.SetActive(true);
+            _sanityGroup1.SetActive(false);
+            _sanityGroup2.SetActive(true);
             _ambiance.SwitchTo3();
             _weather.SetLevel3();
             Lightmapping.lightingSettings = _light3;

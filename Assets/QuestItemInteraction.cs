@@ -14,7 +14,7 @@ public class QuestItemInteraction : Interaction
             _pickUpItemText.text = "Press V to pick up" + " " + "the" + " " + base._targetTag;
     }
 
-    private void Fade()
+    public void Fade()
     {
         _fade.Play("Fade");
     }

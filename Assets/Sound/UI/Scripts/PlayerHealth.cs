@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void PlayerDeath()
     {
-
+        StartCoroutine(DeathFade());
     }
 
     IEnumerator HitDuration()
@@ -42,6 +42,13 @@ public class PlayerHealth : MonoBehaviour
         _isHit = true;
         yield return new WaitForEndOfFrame();
         _isHit = false;
+    }
+
+    IEnumerator DeathFade()
+    {
+        FindObjectOfType<QuestItemInteraction>().Fade();
+        yield return new WaitForSeconds(3);
+        FindObjectOfType<SceneLoader>().ReloadScene();
     }
 
     private bool _isHit;
