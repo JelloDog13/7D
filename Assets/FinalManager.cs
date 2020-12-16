@@ -70,5 +70,11 @@ public class FinalManager : MonoBehaviour
         _potence.SetActive(false);
         _spawn._isHanging = true;
         _spawn.SpawnEnnemies(5);
+        StartCoroutine(DeathComing());//Gère la durée de la séquence avant de fade / reload la demoscene.
+    }
+
+    IEnumerator DeathComing()
+    {
+        yield return null; //provisoire
     }
 }
