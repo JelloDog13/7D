@@ -32,19 +32,23 @@ public class UIController : MonoBehaviour
 
     private void Awake()
     {
+        //on désactive le cursorLock
+        Cursor.lockState = CursorLockMode.None;
+
         //on initialise le menu principal et les cameras
         _mainMenu.SetActive(true);
         _cameraUI.SetActive(true);
         _cameraUI.GetComponent<AudioListener>().enabled = true;
+
         if(_GunCamera.value != null)
         {
             _GunCamera.value.GetComponent<AudioListener>().enabled = false;
         }
-        
-        _cameraMain.value.SetActive(false);
 
-        //on désactive le cursorLock
-        Cursor.lockState = CursorLockMode.None;
+        //if(_cameraMain.value.activeSelf)
+        //{
+        //    _cameraMain.value.SetActive(false);
+        //}
     }
 
     private void Start()
@@ -87,7 +91,7 @@ public class UIController : MonoBehaviour
             //{
                 _pauseMenu.SetActive(true);
                 _cameraUI.SetActive(true);
-                _cameraMain.value.SetActive(true);
+                _cameraMain.value.SetActive(false);
                 _playerGameObjectVariable.value.SetActive(false);
                 _playToggle.SetIsOnWithoutNotify(true);
                 _playToggle.Select();

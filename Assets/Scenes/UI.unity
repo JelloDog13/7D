@@ -2909,7 +2909,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 876786619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -2923,8 +2923,8 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.2509804, g: 0.16470589, b: 0.1137255, a: 1}
     m_PressedColor: {r: 0.34901962, g: 0.12941177, b: 0.078431375, a: 1}
-    m_SelectedColor: {r: 0.54509807, g: 0.4784314, b: 0.40784317, a: 1}
-    m_DisabledColor: {r: 0.7568628, g: 0.76470596, b: 0.8470589, a: 0.5019608}
+    m_SelectedColor: {r: 0.7568628, g: 0.76470596, b: 0.8470589, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2940,13 +2940,10 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 876786623}
-  toggleTransition: 1
-  graphic: {fileID: 0}
-  m_Group: {fileID: 2128671936}
-  onValueChanged:
+  m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 660437780}
+      - m_Target: {fileID: 1182950398}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -2958,7 +2955,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1182950398}
+      - m_Target: {fileID: 660437780}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -2970,7 +2967,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  m_IsOn: 0
 --- !u!114 &876786622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6877,7 +6873,7 @@ PrefabInstance:
     - target: {fileID: 4276618650686145183, guid: 248c707cdd087464c8170cd0c590dbe2, type: 3}
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
-      objectReference: {fileID: 876786621}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248c707cdd087464c8170cd0c590dbe2, type: 3}
 --- !u!1001 &6651924608659009133
@@ -6976,6 +6972,10 @@ PrefabInstance:
       value: BackButtonBackground
       objectReference: {fileID: 0}
     - target: {fileID: 6651924608818656643, guid: f0bf3f8708a2bd447a3cdd1083e4d36c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651924608818656643, guid: f0bf3f8708a2bd447a3cdd1083e4d36c, type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
       value: 
       objectReference: {fileID: 167810663}
@@ -6999,6 +6999,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1593708102}
+    - target: {fileID: 6651924608818656643, guid: f0bf3f8708a2bd447a3cdd1083e4d36c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651924608818656643, guid: f0bf3f8708a2bd447a3cdd1083e4d36c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651924608818656643, guid: f0bf3f8708a2bd447a3cdd1083e4d36c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651924608818656643, guid: f0bf3f8708a2bd447a3cdd1083e4d36c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 480530958}
+    - target: {fileID: 6651924608818656643, guid: f0bf3f8708a2bd447a3cdd1083e4d36c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SwitchCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651924608818656643, guid: f0bf3f8708a2bd447a3cdd1083e4d36c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0bf3f8708a2bd447a3cdd1083e4d36c, type: 3}
 --- !u!114 &6817207402873709344
