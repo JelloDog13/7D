@@ -18,6 +18,7 @@ public class FinalManager : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera _CM3;//La cam qui rentre dans le noeud coulant
     [SerializeField] GameObject _potence;
     [SerializeField] EnnemySpawner _spawn;
+    [SerializeField] Canvas _finalChokeCanvas;
     private bool _canHang;
  
 
@@ -39,6 +40,7 @@ public class FinalManager : MonoBehaviour
                 _CM3.gameObject.SetActive(true);//Avec Cinemachine et un custom blend qui permet de faire des travelling en activant/desactivant les cams
                 _hangText.gameObject.SetActive(false);
                 StartCoroutine(HangYourselfCoroutine());
+                _finalChokeCanvas.gameObject.SetActive(true);
             }
         }
     }
