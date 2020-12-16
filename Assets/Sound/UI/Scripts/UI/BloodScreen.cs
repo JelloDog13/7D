@@ -16,7 +16,7 @@ public class BloodScreen : MonoBehaviour
         _alpha = new Color(255f, 255f, 255f, 0f);
         _image.color = _alpha;
     }
-
+    
     private void Update()
     {
         if(_playerHealth.IsHit)
@@ -27,9 +27,23 @@ public class BloodScreen : MonoBehaviour
 
         if(_playerHealth.MaxHealth <= _dangerZone && !_isBleeding)
         {
+<<<<<<< HEAD:Assets/Sound/UI/Scripts/UI/BloodScreen.cs
             _isBleeding = true;
             Debug.Log("TU VAS CREVER!!!!!");
             StartCoroutine(DelayDangerZoneAnimation());
+=======
+            //Debug.Log("TU VAS CREVER!!!!!");
+            if (_playerHealth.IsHit)
+            {
+                _isCloseToDeath = true;
+            }
+                
+            if (_isCloseToDeath) 
+            {
+                ApplySequenceDangerZone();
+                StartCoroutine(DelayDangerZoneAnimation());
+            }
+>>>>>>> UI:Assets/Scripts/UI/BloodScreen.cs
         }
     }
 
@@ -45,17 +59,19 @@ public class BloodScreen : MonoBehaviour
     {
         Sequence sequence = DOTween.Sequence();
         sequence.Append(_image.DOFade(endValue: 0.9f, duration: 0.5f));
-        sequence.PrependInterval(0.2f);
-        sequence.Append(_image.DOFade(endValue: 0f, duration: 0.5f));
-        sequence.SetLoops(4, LoopType.Yoyo).SetSpeedBased();
+        //sequence.PrependInterval(0.2f);
+        sequence.Append(_image.DOFade(endValue: 0.2f, duration: 0.5f));
+        sequence.SetLoops(-1, LoopType.Yoyo).SetSpeedBased();
     }
 
     IEnumerator DelayDangerZoneAnimation()
     {
-        ApplySequenceDangerZone();
-        yield return new WaitForSeconds(0.1f);
+        Debug.Log("TU VAS CREVER!!!!!");
+        yield return new WaitForEndOfFrame();
+        _isCloseToDeath = false;
     }
 
+    public bool _isCloseToDeath;
     private Image _image;
     private Color _alpha;
 }

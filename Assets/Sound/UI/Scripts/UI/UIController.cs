@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
 {
     [Header("Menu")]
     [SerializeField] GameObject _pauseMenu;
+    [SerializeField] GameObject _mainMenu;
     [SerializeField] Toggle _playToggle;
 
     [Header("Button & Cursor")]
@@ -23,18 +24,38 @@ public class UIController : MonoBehaviour
     [Header("Exit")]
     [SerializeField] float _exitApplicationDelay;
 
-    [Header("Player")]
+    [Header("GameObject")]
+    [SerializeField] GameObject _cameraUI;
+    [SerializeField] GameObjectVariable _cameraMain;
+    [SerializeField] GameObjectVariable _GunCamera;
     [SerializeField] GameObjectVariable _playerGameObjectVariable;
 
     private void Awake()
     {
-        //Cursor.SetCursor(_cursor, new Vector2(0, 1), CursorMode.Auto);
-        _onPause = false;
+        //on désactive le cursorLock
+        Cursor.lockState = CursorLockMode.None;
+
+        //on initialise le menu principal et les cameras
+        _mainMenu.SetActive(true);
+        _cameraUI.SetActive(true);
+        _cameraUI.GetComponent<AudioListener>().enabled = true;
+
+        if(_GunCamera.value != null)
+        {
+            _GunCamera.value.GetComponent<AudioListener>().enabled = false;
+        }
+
+        //if(_cameraMain.value.activeSelf)
+        //{
+        //    _cameraMain.value.SetActive(false);
+        //}
     }
 
     private void Start()
     {
+        
         var setters = Resources.FindObjectsOfTypeAll<UIPreferencesManager>();
+        //charge les preferences
         foreach(var setter in setters)
         {
             setter.LoadPrefs();
@@ -66,42 +87,52 @@ public class UIController : MonoBehaviour
         //si on appuye sur ECHAP ou START alors on ative le cursor et timeScale = 0
         if(Input.GetButton("PauseMenu"))
         {
-            if (!EventSystem.current.IsPointerOverGameObject())
-            {
+            //if (!EventSystem.current.IsPointerOverGameObject())
+            //{
                 _pauseMenu.SetActive(true);
+                _cameraUI.SetActive(true);
+                _cameraMain.value.SetActive(false);
                 _playerGameObjectVariable.value.SetActive(false);
                 _playToggle.SetIsOnWithoutNotify(true);
                 _playToggle.Select();
-            }
+            //}
         }
-        else
-        {
-            _playerGameObjectVariable.value.SetActive(true);
-        }
+            
+        
 
         if (_pauseMenu.activeSelf)
         {
-            _onPause = true;
-            //Debug.Log($"OnPause : <color=green>{_onPause}</color>");
-        }
-        else
-        {
-            _onPause = false;
-            //Debug.Log($"OnPause : <color=red>{_onPause}</color>");
-        }
-
-        if (_onPause)
-        {
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
+
+            _cameraUI.GetComponent<AudioListener>().enabled = true;
+            _GunCamera.value.GetComponent<AudioListener>().enabled = false;
             //Debug.Log("TimeScale : <color=green>0</color>");
+            //Debug.Log($"OnPause : <color=green>{_onPause}</color>");
         }
         else
         {
             Time.timeScale = 1f;
             Cursor.lockState = CursorLockMode.Locked;
+            _playerGameObjectVariable.value.SetActive(true);
+            _cameraUI.GetComponent<AudioListener>().enabled = false;
+            _GunCamera.value.GetComponent<AudioListener>().enabled = true;
             //Debug.Log("TimeScale : <color=red>1</color>");
+            //Debug.Log($"OnPause : <color=red>{_onPause}</color>");
         }
+    }
+
+    public void SwitchCamera()
+    {
+        //on désactive le menu principal et on passe sur la MainCamera
+        _mainMenu.SetActive(false);
+        _cameraUI.SetActive(false);
+        _cameraMain.value.SetActive(true);
+        Debug.Log("main cam : " + _cameraMain.value);
+        _cameraUI.GetComponent<AudioListener>().enabled = false;
+        _GunCamera.value.GetComponent<AudioListener>().enabled = true;
+        //on active le cursorLock
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ExitApplication()
@@ -125,6 +156,7 @@ public class UIController : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         QualitySettings.shadowDistance = 40;
     }
+
     private void ControlSettings()
     {
         // Remapping des touches
@@ -160,15 +192,12 @@ public class UIController : MonoBehaviour
 
     private GameObject _lastSelected;
     private Vector2 _lastMousePosition;
-    private bool _onPause;
 
     private IEnumerator ExitApplicationCoroutine()
     {
         yield return new WaitForSeconds(_exitApplicationDelay);
-#if UNITY_EDITOR
-        EditorApplication.ExitPlaymode();
-#else
+
+        Debug.Log("Quit Game");
         Application.Quit();
-#endif
     }
 }
