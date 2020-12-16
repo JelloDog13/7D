@@ -17,8 +17,9 @@ public class FinalManager : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera _CM2;//La cam derrière la potence qui permet le lent travelling
     [SerializeField] CinemachineVirtualCamera _CM3;//La cam qui rentre dans le noeud coulant
     [SerializeField] GameObject _potence;
-
+    [SerializeField] EnnemySpawner _spawn;
     private bool _canHang;
+ 
 
     private void Start()
     {
@@ -67,5 +68,7 @@ public class FinalManager : MonoBehaviour
         _CM1.gameObject.SetActive(true);
         _CM1.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 5;
         _potence.SetActive(false);
+        _spawn._isHanging = true;
+        _spawn.SpawnEnnemies(5);
     }
 }

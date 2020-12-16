@@ -11,15 +11,15 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] Transform _playerPos;
     [SerializeField] Transform _probeCenter;
     [SerializeField] float _detectionRadius, _wanderRadius;
+    [SerializeField] EnnemySpawner _spawner;
     public float _wanderSpeed, _attackSpeed, _waitTime;
     public bool _onWander, _onAlert, _isDead, _inWait;
-
-
 
     private void Awake()
     {
         _onWander = true;
         _playerPos = FindObjectOfType<FpsControllerLPFP>().transform;
+        _spawner = FindObjectOfType<EnnemySpawner>();
     }
 
     void Start()
@@ -31,11 +31,15 @@ public class EnemyMovement : MonoBehaviour
     {
         if (!_isDead)
         {
-            if (RaycastPlayer())
+            if (_spawner._isHanging)
             {
                 Attack();
             }
-            else Wander();
+            else if (RaycastPlayer())
+            {
+                Attack();
+            }
+            else { Wander(); }
         }
         else _agent.speed = 0;
     }

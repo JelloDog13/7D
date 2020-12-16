@@ -7,6 +7,8 @@ public class EnnemySpawner : MonoBehaviour
     [SerializeField] GameObject _ennemyPrefab;
     [SerializeField] Transform [] _ennemySpawnerTransform;
     [SerializeField] SanityManager _sanityManager;
+    public bool _isHanging;
+
 
     public void SpawnEnnemies(int numberOfEnnemies)
     {
