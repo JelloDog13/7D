@@ -22007,7 +22007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e48559b4d4411af47a8d7d5644fd5cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameObjectVariable: {fileID: 11400000, guid: 6998d0d3685f03d4ea4bdebb0e57e460, type: 2}
+  _playerGameObject: {fileID: 11400000, guid: 6998d0d3685f03d4ea4bdebb0e57e460, type: 2}
 --- !u!1001 &913660692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24602,7 +24602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e48559b4d4411af47a8d7d5644fd5cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameObjectVariable: {fileID: 11400000, guid: 5e0b08a4b565c3c4e9cd7dd07e33020c, type: 2}
+  _playerGameObject: {fileID: 11400000, guid: 5e0b08a4b565c3c4e9cd7dd07e33020c, type: 2}
 --- !u!1 &1211549306
 GameObject:
   m_ObjectHideFlags: 0
@@ -27053,7 +27053,7 @@ Transform:
   - {fileID: 885451278}
   - {fileID: 1091694569}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1622223927
 PrefabInstance:
@@ -30429,7 +30429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e48559b4d4411af47a8d7d5644fd5cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameObjectVariable: {fileID: 11400000, guid: 96eb6e4ccf86df44fafe70c10a2924aa, type: 2}
+  _playerGameObject: {fileID: 11400000, guid: 96eb6e4ccf86df44fafe70c10a2924aa, type: 2}
 --- !u!64 &2045126942
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31116,7 +31116,7 @@ Transform:
   - {fileID: 58014798}
   - {fileID: 148827875}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2124855064
 MonoBehaviour:

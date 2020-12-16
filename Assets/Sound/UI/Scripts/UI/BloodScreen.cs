@@ -25,14 +25,12 @@ public class BloodScreen : MonoBehaviour
             ApplySequenceHit();
         }
 
-        if(_playerHealth.MaxHealth <= _dangerZone && !_isBleeding)
+        if(_playerHealth.MaxHealth <= _dangerZone )//&& !_isBleeding)
         {
-<<<<<<< HEAD:Assets/Sound/UI/Scripts/UI/BloodScreen.cs
-            _isBleeding = true;
+            //_isBleeding = true;
             Debug.Log("TU VAS CREVER!!!!!");
             StartCoroutine(DelayDangerZoneAnimation());
-=======
-            //Debug.Log("TU VAS CREVER!!!!!");
+
             if (_playerHealth.IsHit)
             {
                 _isCloseToDeath = true;
@@ -43,7 +41,6 @@ public class BloodScreen : MonoBehaviour
                 ApplySequenceDangerZone();
                 StartCoroutine(DelayDangerZoneAnimation());
             }
->>>>>>> UI:Assets/Scripts/UI/BloodScreen.cs
         }
     }
 
