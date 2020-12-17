@@ -45,9 +45,9 @@ public class PlayerHealth : MonoBehaviour
     }
 
     IEnumerator DeathFade()
-    {
+    {         
         FindObjectOfType<QuestItemInteraction>().Fade();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         FindObjectOfType<SceneLoader>().ReloadScene();
     }
 
