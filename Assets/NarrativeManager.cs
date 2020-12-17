@@ -20,6 +20,7 @@ public class NarrativeManager : MonoBehaviour
     [SerializeField] Transform _backHomePositionTransform;
     [SerializeField] Transform _playerTransform;
     [SerializeField] HandgunScriptLPFP _handgunScript;
+    [SerializeField] GameObject[] _questItemArray = new GameObject[3];
 
     private bool _hasReturned;
     private bool _introIsFinished;

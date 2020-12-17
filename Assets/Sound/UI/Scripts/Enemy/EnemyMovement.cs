@@ -12,6 +12,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] Transform _probeCenter;
     [SerializeField] float _detectionRadius, _wanderRadius;
     [SerializeField] EnnemySpawner _spawner;
+    [SerializeField] EnemyFight _enemyFight;
     public float _wanderSpeed, _attackSpeed, _waitTime;
     public bool _onWander, _onAlert, _isDead, _inWait;
 
@@ -36,6 +37,10 @@ public class EnemyMovement : MonoBehaviour
                 Attack();
             }
             else if (RaycastPlayer())
+            {
+                Attack();
+            }
+            else if (_enemyFight._isHit)
             {
                 Attack();
             }
