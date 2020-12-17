@@ -10,7 +10,7 @@ public class UIController : MonoBehaviour
 {
     [Header("Menu")]
     [SerializeField] GameObject _pauseMenu;
-    [SerializeField] GameObject _mainMenu;
+    //[SerializeField] GameObject _mainMenu;
     [SerializeField] Toggle _playToggle;
 
     [Header("Button & Cursor")]
@@ -33,17 +33,17 @@ public class UIController : MonoBehaviour
     private void Awake()
     {
         //on désactive le cursorLock
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
 
         //on initialise le menu principal et les cameras
-        _mainMenu.SetActive(true);
-        _cameraUI.SetActive(true);
-        _cameraUI.GetComponent<AudioListener>().enabled = true;
+        //_mainMenu.SetActive(true);
+        _cameraUI.SetActive(false);
+        //_cameraUI.GetComponent<AudioListener>().enabled = true;
 
         if(_GunCamera.value != null)
         {
-            _GunCamera.value.GetComponent<AudioListener>().enabled = false;
+            _GunCamera.value.GetComponent<AudioListener>().enabled = true;
         }
 
         //_playerGameObjectVariable.value.SetActive(false);
@@ -127,7 +127,7 @@ public class UIController : MonoBehaviour
     public void SwitchCamera()
     {
         //on désactive le menu principal et on passe sur la MainCamera
-        _mainMenu.SetActive(false);
+        //_mainMenu.SetActive(false);
         _cameraUI.SetActive(false);
         _cameraMain.value.SetActive(true);
         Debug.Log("main cam : " + _cameraMain.value);
@@ -192,8 +192,8 @@ public class UIController : MonoBehaviour
     //    _lastMousePosition = Input.mousePosition;
     //}
 
-    private GameObject _lastSelected;
-    private Vector2 _lastMousePosition;
+    //private GameObject _lastSelected;
+    //private Vector2 _lastMousePosition;
 
     private IEnumerator ExitApplicationCoroutine()
     {

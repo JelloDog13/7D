@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    public void LoadLevel()
+    private void Awake()
     {
         SceneManager.LoadScene("UI", LoadSceneMode.Additive);
         SceneManager.LoadScene("DemoScene", LoadSceneMode.Additive);
