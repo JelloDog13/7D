@@ -41,7 +41,7 @@ public class UIController : MonoBehaviour
 
         if(_GunCamera.value != null)
         {
-            _GunCamera.value.GetComponent<AudioListener>().enabled = true;
+            _GunCamera.value.GetComponent<AudioListener>().enabled = false;
         }
     }
 
@@ -70,7 +70,7 @@ public class UIController : MonoBehaviour
     private void Update()
     {
         //si on appuye sur ECHAP ou START alors on ative le cursor et timeScale = 0
-        if(Input.GetButtonDown("PauseMenu")&& !_isActived)
+        if(Input.GetButton("PauseMenu"))
         {
             Cursor.lockState = CursorLockMode.None;
             _handgunScriptVariable.value.enabled = false;
@@ -79,6 +79,8 @@ public class UIController : MonoBehaviour
             _playToggle.Select();
             _isActived = true;
         }
+            
+        
 
         else if (Input.GetButtonDown("PauseMenu") && _isActived)
         {
@@ -129,11 +131,9 @@ public class UIController : MonoBehaviour
 
     private IEnumerator ExitApplicationCoroutine()
     {
-        yield return new WaitForSecondsRealtime(_exitApplicationDelay);
+        yield return new WaitForSeconds(_exitApplicationDelay);
 
         Debug.Log("Quit Game");
         Application.Quit();
     }
-
-    private bool _isActived;
 }

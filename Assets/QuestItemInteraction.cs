@@ -11,7 +11,7 @@ public class QuestItemInteraction : Interaction
 
     private void ShowText()
     {
-            _pickUpItemText.text = "Press V to pick up" + " " + "the" + " " + base._targetTag;
+            _pickUpItemText.text = "Press V tO pick up" + " " + "the" + " " + base._targetTag;
     }
 
     public void Fade()

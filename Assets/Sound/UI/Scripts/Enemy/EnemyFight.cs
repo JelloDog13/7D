@@ -45,6 +45,7 @@ public class EnemyFight : MonoBehaviour
     {
         _bulletsToKill--;
         _anim.TakeHit();
+        _isHit = true;
         if(_bulletsToKill <= 0)
         {
             if (Random.Range(0, 2) == 1)
