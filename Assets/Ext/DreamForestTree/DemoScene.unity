@@ -3707,9 +3707,9 @@ MonoBehaviour:
   _light: {fileID: 762071236}
   _weather: {fileID: 2106961932}
   _ambiance: {fileID: 131580344}
-  _light1: {fileID: 0}
-  _light2: {fileID: 0}
-  _light3: {fileID: 0}
+  _light1: {fileID: 4890085278179872738, guid: d8f8df2c280f23a4ca0dc3ee24a314d4, type: 2}
+  _light2: {fileID: 4890085278179872738, guid: 5ad1c44135374524bbb3802a9a03faa5, type: 2}
+  _light3: {fileID: 4890085278179872738, guid: 6245734300fd817498ef62b2b2d26b6e, type: 2}
   _ennemySpawner: {fileID: 1612380680}
   _wave1: 4
   _wave2: 4
