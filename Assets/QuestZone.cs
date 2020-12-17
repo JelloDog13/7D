@@ -32,6 +32,7 @@ public class QuestZone : MonoBehaviour
             if (_player.SanityLevel() >= 3)
             {
                 _targetObject.SetActive(true);
+                StartCoroutine(Outro(3));
             }
             //SON DE QUETE ACCOMPLIE
         }
@@ -54,4 +55,10 @@ public class QuestZone : MonoBehaviour
         _textAvailable = true;
     }
 
+    private IEnumerator Outro(float time)
+    {
+        FindObjectOfType<QuestItemInteraction>().Fade();
+        yield return new WaitForSeconds(time);
+        FindObjectOfType<SceneLoader>().LoadNextScene();
+    }
 }

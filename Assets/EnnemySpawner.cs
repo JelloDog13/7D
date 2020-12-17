@@ -7,6 +7,8 @@ public class EnnemySpawner : MonoBehaviour
     [SerializeField] GameObject _ennemyPrefab;
     [SerializeField] Transform [] _ennemySpawnerTransform;
     [SerializeField] SanityManager _sanityManager;
+    public bool _isHanging;
+
 
     public void SpawnEnnemies(int numberOfEnnemies)
     {
@@ -14,7 +16,8 @@ public class EnnemySpawner : MonoBehaviour
         {
             for (int i = 0; i < numberOfEnnemies; i++)
             {
-                Instantiate(_ennemyPrefab, spawnPoint.position, Quaternion.identity, spawnPoint);
+                var obj = Instantiate(_ennemyPrefab, spawnPoint.position, Quaternion.identity, spawnPoint);
+                obj.transform.parent = GameObject.Find("BADDIES").transform;
             }
         }
     }

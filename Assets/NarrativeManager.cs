@@ -13,7 +13,9 @@ public class NarrativeManager : MonoBehaviour
     [SerializeField] Animator _fade;
     [SerializeField] AudioSource _narrativeAudioSource;
     [SerializeField] Image _blackScreen;
+    [SerializeField] GameObject[] _questObjects;
 
+    private bool _hasReturned;
     private bool _introIsFinished;
     private bool _gameStarted;
     
@@ -49,5 +51,18 @@ public class NarrativeManager : MonoBehaviour
         _introIsFinished = true;        
         yield return new WaitForSeconds(5);
         _blackScreen.gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!_hasReturned && _introIsFinished)
+        {
+            _hasReturned = true;
+            foreach(GameObject obj in _questObjects)
+            {
+                obj.SetActive(true);
+            }
+            Destroy(GetComponent<Collider>());
+        }
     }
 }
