@@ -14,6 +14,10 @@ public class NarrativeManager : MonoBehaviour
     [SerializeField] AudioSource _narrativeAudioSource;
     [SerializeField] Image _blackScreen;
     [SerializeField] GameObject[] _questObjects;
+    [SerializeField] GameObject _weapon;
+    [SerializeField] GameObject _arms;
+    [SerializeField] Transform _backHomePositionTransform;
+    [SerializeField] Transform _playerTransform;
 
     private bool _hasReturned;
     private bool _introIsFinished;
@@ -25,6 +29,12 @@ public class NarrativeManager : MonoBehaviour
         _texte1.gameObject.SetActive(true);
         _introIsFinished = false;
         _gameStarted = true;
+    }
+
+    private void Start()
+    {
+        _weapon.SetActive(false);
+        _arms.SetActive(false);
     }
 
     private void Update()
@@ -45,6 +55,10 @@ public class NarrativeManager : MonoBehaviour
         _fade.Play("FadeIn");
         _narrativeAudioSource.PlayOneShot(_angryCrowdSound);
         yield return new WaitForSeconds(4);
+        _playerTransform.position = _backHomePositionTransform.position;
+        _playerTransform.rotation = _backHomePositionTransform.rotation;
+        _weapon.SetActive(true);
+        _arms.SetActive(true);
         _questPanel.SetActive(true);
         _fade.Play("FadeOut");
         _texte2.gameObject.SetActive(false);
