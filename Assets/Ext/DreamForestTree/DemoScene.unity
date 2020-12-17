@@ -515,7 +515,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!1 &59135075
 GameObject:
@@ -1267,7 +1267,7 @@ Transform:
   - {fileID: 1152242455}
   - {fileID: 729787120}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &148827874
 GameObject:
@@ -3609,9 +3609,9 @@ MonoBehaviour:
   _light: {fileID: 762071236}
   _weather: {fileID: 2106961932}
   _ambiance: {fileID: 131580344}
-  _light1: {fileID: 4890085278179872738, guid: d8f8df2c280f23a4ca0dc3ee24a314d4, type: 2}
-  _light2: {fileID: 4890085278179872738, guid: 5ad1c44135374524bbb3802a9a03faa5, type: 2}
-  _light3: {fileID: 4890085278179872738, guid: 6245734300fd817498ef62b2b2d26b6e, type: 2}
+  _light1: {fileID: 0}
+  _light2: {fileID: 0}
+  _light3: {fileID: 0}
   _ennemySpawner: {fileID: 1612380680}
   _wave1: 4
   _wave2: 4
@@ -3628,7 +3628,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &409734945
 MeshCollider:
@@ -23158,7 +23158,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16342
+  m_Name: pb_Mesh36070
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26525,7 +26525,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!64 &1503700941
 MeshCollider:
@@ -27550,6 +27550,10 @@ PrefabInstance:
     - target: {fileID: 1273765395313544, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_Name
       value: PLAYER
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273765395313544, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1431881650984858, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_IsActive
@@ -31874,6 +31878,10 @@ PrefabInstance:
     - target: {fileID: 2693279622244200933, guid: 66390a6ce745674438b494ac4112dc64, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693279622244200934, guid: 66390a6ce745674438b494ac4112dc64, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66390a6ce745674438b494ac4112dc64, type: 3}
