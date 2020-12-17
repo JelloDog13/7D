@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using FPSControllerLPFP;
 
 public class NarrativeManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class NarrativeManager : MonoBehaviour
     [SerializeField] GameObject _arms;
     [SerializeField] Transform _backHomePositionTransform;
     [SerializeField] Transform _playerTransform;
+    [SerializeField] HandgunScriptLPFP _handgunScript;
 
     private bool _hasReturned;
     private bool _introIsFinished;
@@ -35,6 +37,7 @@ public class NarrativeManager : MonoBehaviour
     {
         _weapon.SetActive(false);
         _arms.SetActive(false);
+        _handgunScript.enabled = false;
     }
 
     private void Update()
@@ -57,6 +60,7 @@ public class NarrativeManager : MonoBehaviour
         yield return new WaitForSeconds(4);
         _playerTransform.position = _backHomePositionTransform.position;
         _playerTransform.rotation = _backHomePositionTransform.rotation;
+        _handgunScript.enabled = true;
         _weapon.SetActive(true);
         _arms.SetActive(true);
         _questPanel.SetActive(true);
