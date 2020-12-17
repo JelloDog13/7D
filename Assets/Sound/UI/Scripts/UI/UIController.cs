@@ -45,7 +45,7 @@ public class UIController : MonoBehaviour
             _GunCamera.value.GetComponent<AudioListener>().enabled = false;
         }
 
-        //if(_cameraMain.value.activeSelf)
+        //if (_cameraUI.activeSelf)
         //{
         //    _cameraMain.value.SetActive(false);
         //}
@@ -140,55 +140,55 @@ public class UIController : MonoBehaviour
         StartCoroutine(ExitApplicationCoroutine());
     }
 
-    private void GraphicsSettings()
-    {
-        // https://docs.unity3d.com/Manual/class-QualitySettings.html
+    //private void GraphicsSettings()
+    //{
+    //    // https://docs.unity3d.com/Manual/class-QualitySettings.html
 
-        string[] names = QualitySettings.names;
-        Debug.Log(names[QualitySettings.GetQualityLevel()]);
-        QualitySettings.SetQualityLevel(0, true); // => true = redémarrer
+    //    string[] names = QualitySettings.names;
+    //    Debug.Log(names[QualitySettings.GetQualityLevel()]);
+    //    QualitySettings.SetQualityLevel(0, true); // => true = redémarrer
 
 
-        QualitySettings.antiAliasing = 1;
-        QualitySettings.anisotropicFiltering = AnisotropicFiltering.Enable;
-        QualitySettings.masterTextureLimit = 1;
-        QualitySettings.pixelLightCount = 1;
-        QualitySettings.vSyncCount = 0;
-        QualitySettings.shadowDistance = 40;
-    }
+    //    QualitySettings.antiAliasing = 1;
+    //    QualitySettings.anisotropicFiltering = AnisotropicFiltering.Enable;
+    //    QualitySettings.masterTextureLimit = 1;
+    //    QualitySettings.pixelLightCount = 1;
+    //    QualitySettings.vSyncCount = 0;
+    //    QualitySettings.shadowDistance = 40;
+    //}
 
-    private void ControlSettings()
-    {
-        // Remapping des touches
+    //private void ControlSettings()
+    //{
+    //    // Remapping des touches
 
-        // Ne pas utiliser l'Input Manager et en coder un custom
+    //    // Ne pas utiliser l'Input Manager et en coder un custom
 
-        // - Définir les actions possibles dans le jeu
-        // - Mapper une action avec un KeyCode
-        // - Dans un script, tester Input.GetKey(KeyCode) pour chaque action
-        // - Faire l'UI pour modifier le KeyCode pour chaque action
+    //    // - Définir les actions possibles dans le jeu
+    //    // - Mapper une action avec un KeyCode
+    //    // - Dans un script, tester Input.GetKey(KeyCode) pour chaque action
+    //    // - Faire l'UI pour modifier le KeyCode pour chaque action
 
-        // Sensibilité de la souris
+    //    // Sensibilité de la souris
 
-        // Avoir une valeur de sensibilité x et y entre 0 et 1
-        float xSensitivity = .5f;
-        float ySensitivity = .5f;
+    //    // Avoir une valeur de sensibilité x et y entre 0 et 1
+    //    float xSensitivity = .5f;
+    //    float ySensitivity = .5f;
 
-        // Calculer le delta entre la position actuelle de la souris et la nouvelle position
-        Vector2 delta = (Vector2)Input.mousePosition - _lastMousePosition;
+    //    // Calculer le delta entre la position actuelle de la souris et la nouvelle position
+    //    Vector2 delta = (Vector2)Input.mousePosition - _lastMousePosition;
 
-        // Faire le Dot product avec l'axe x et y pour obtenir la vitesse du mouvement sur x et y
-        float xSpeed = Vector2.Dot(delta, Vector2.right);
-        float ySpeed = Vector2.Dot(delta, Vector2.up);
+    //    // Faire le Dot product avec l'axe x et y pour obtenir la vitesse du mouvement sur x et y
+    //    float xSpeed = Vector2.Dot(delta, Vector2.right);
+    //    float ySpeed = Vector2.Dot(delta, Vector2.up);
 
-        // Multiplier par la sensitivité x / y
-        xSpeed *= xSensitivity;
-        ySpeed *= ySensitivity;
+    //    // Multiplier par la sensitivité x / y
+    //    xSpeed *= xSensitivity;
+    //    ySpeed *= ySensitivity;
 
-        // On peut utiliser cette vitesse pour bouger la caméra par exemple
+    //    // On peut utiliser cette vitesse pour bouger la caméra par exemple
 
-        _lastMousePosition = Input.mousePosition;
-    }
+    //    _lastMousePosition = Input.mousePosition;
+    //}
 
     private GameObject _lastSelected;
     private Vector2 _lastMousePosition;
