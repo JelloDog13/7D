@@ -68,7 +68,7 @@ public class FinalManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         _CM3.gameObject.SetActive(false);
         _CM1.gameObject.SetActive(true);
-        _CM1.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 5;
+        _CM1.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 3;
         _potence.SetActive(false);
         _spawn._isHanging = true;
         _spawn.SpawnEnnemies(5);
