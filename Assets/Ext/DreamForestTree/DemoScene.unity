@@ -31136,11 +31136,9 @@ MonoBehaviour:
   _narrativeAudioSource: {fileID: 148827876}
   _blackScreen: {fileID: 1493498233}
   _questObjects:
-  - {fileID: 0}
   - {fileID: 1820032384}
   - {fileID: 1570301804}
   - {fileID: 48348962}
-  - {fileID: 0}
   _weapon: {fileID: 320890055}
   _arms: {fileID: 2063413572}
   _backHomePositionTransform: {fileID: 2108956891}
