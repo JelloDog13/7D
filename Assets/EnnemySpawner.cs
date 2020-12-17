@@ -16,7 +16,7 @@ public class EnnemySpawner : MonoBehaviour
         {
             for (int i = 0; i < numberOfEnnemies; i++)
             {
-                var obj = Instantiate(_ennemyPrefab, spawnPoint.position, Quaternion.identity, spawnPoint);
+                var obj = Instantiate(_ennemyPrefab, spawnPoint.position, Quaternion.identity);//, spawnPoint);
                 obj.transform.parent = GameObject.Find("BADDIES").transform;
             }
         }
