@@ -6,11 +6,14 @@ public class PlayerProgress : MonoBehaviour
 {
     [SerializeField] QuestZone _jimmyInteractZone, _margueriteInteractZone, _dogInteractZone;
     [SerializeField] SanityManager _sanity;
+    [SerializeField] AudioClip _pickupSFX;
+    private AudioSource _sound;
     public List<Collectible> _itemsObtained;
 
     void Start()
     {
-        
+        _sound = GetComponent<AudioSource>();
+        _sound.clip = _pickupSFX;
     }
 
     void Update()
@@ -25,6 +28,7 @@ public class PlayerProgress : MonoBehaviour
 
     public void AddItem(Collectible newItem)
     {
+        _sound.Play();
         _itemsObtained.Add(newItem);
         _sanity.IncreaseSanity();
     }

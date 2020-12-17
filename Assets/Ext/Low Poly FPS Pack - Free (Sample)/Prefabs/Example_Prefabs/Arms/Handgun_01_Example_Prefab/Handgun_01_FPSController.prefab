@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 20338765399721042}
   - component: {fileID: 81077183272072556}
   - component: {fileID: 167991128729056518}
+  - component: {fileID: 2579356683759404036}
   - component: {fileID: 1935298480}
   m_Layer: 0
   m_Name: Gun Camera
@@ -345,6 +346,19 @@ AudioReverbZone:
   m_Density: 100
   m_LFReference: 250
   m_RoomLF: 0
+--- !u!114 &2579356683759404036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050015137284376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d56a36d29551941ad3b2b4c13ee674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObjectVariable: {fileID: 11400000, guid: 96eb6e4ccf86df44fafe70c10a2924aa, type: 2}
 --- !u!114 &1935298480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2239,13 +2253,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1640923967087210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24822d6a0c4dece43929b2c439511ece, type: 3}
+  m_Script: {fileID: 11500000, guid: 57d56a36d29551941ad3b2b4c13ee674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camTransform: {fileID: 4660889904850796}
-  shakeDuration: 0.2
-  shakeAmount: 0.2
-  decreaseFactor: 1
+  _gameObjectVariable: {fileID: 11400000, guid: 5e0b08a4b565c3c4e9cd7dd07e33020c, type: 2}
 --- !u!1 &1650487703094908
 GameObject:
   m_ObjectHideFlags: 0
