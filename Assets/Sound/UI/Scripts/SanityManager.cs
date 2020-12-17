@@ -31,10 +31,10 @@ public class SanityManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            IncreaseSanity();
-        }
+        //if (Input.GetMouseButton(0))
+        //{
+        //    IncreaseSanity();
+        //}
     }
 
     private void SwitchSanityLevel()
