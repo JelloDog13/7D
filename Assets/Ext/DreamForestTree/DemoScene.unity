@@ -4023,6 +4023,10 @@ PrefabInstance:
       propertyPath: _interactionScript
       value: 
       objectReference: {fileID: 1882147802}
+    - target: {fileID: 114919995911110234, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
+      propertyPath: _handgunScriptVariable
+      value: 
+      objectReference: {fileID: 11400000, guid: 80e65546506a6a64e9193490544ee5a2, type: 2}
     - target: {fileID: 136351756376160448, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_Material
       value: 
