@@ -5,8 +5,6 @@ using UnityEngine.UI;
 // ----- Low Poly FPS Pack Free Version -----
 public class HandgunScriptLPFP : MonoBehaviour {
 
-	[SerializeField] HandgunScriptVariable _handgunScriptVariable;
-
 	//Animator component attached to weapon
 	Animator anim;
 
@@ -181,8 +179,6 @@ public class HandgunScriptLPFP : MonoBehaviour {
 
 		//Set the shoot sound to audio source
 		shootAudioSource.clip = SoundClips.shootSound;
-
-		_handgunScriptVariable.value = this;
 	}
 
 	private void LateUpdate () {
