@@ -8,6 +8,7 @@ using UnityEditor;
 
 public class UIController : MonoBehaviour
 {
+    [Header("Data")]
     [SerializeField] HandgunScriptVariable _handgunScriptVariable;
 
     [Header("Menu")]
@@ -46,7 +47,6 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        
         var setters = Resources.FindObjectsOfTypeAll<UIPreferencesManager>();
         //charge les preferences
         foreach(var setter in setters)
