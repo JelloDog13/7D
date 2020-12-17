@@ -33,6 +33,7 @@ public class UIController : MonoBehaviour
     private void Awake()
     {
         //on désactive le cursorLock
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
         //on initialise le menu principal et les cameras
