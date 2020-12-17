@@ -133,6 +133,7 @@ public class UIController : MonoBehaviour
         Debug.Log("main cam : " + _cameraMain.value);
         _cameraUI.GetComponent<AudioListener>().enabled = false;
         _GunCamera.value.GetComponent<AudioListener>().enabled = true;
+        _playerGameObjectVariable.value.SetActive(true);
         //on active le cursorLock
         Cursor.lockState = CursorLockMode.Locked;
     }
