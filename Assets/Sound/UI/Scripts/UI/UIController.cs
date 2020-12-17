@@ -8,13 +8,15 @@ using UnityEditor;
 
 public class UIController : MonoBehaviour
 {
+    [SerializeField] HandgunScriptVariable _handgunScriptVariable;
+
     [Header("Menu")]
     [SerializeField] GameObject _pauseMenu;
-    [SerializeField] GameObject _mainMenu;
+    //[SerializeField] GameObject _mainMenu;
     [SerializeField] Toggle _playToggle;
 
     [Header("Button & Cursor")]
-    [SerializeField] Button _continueButton;
+    //[SerializeField] Button _continueButton;
     [SerializeField] Texture2D _cursor;
 
     [Header("Audio")]
@@ -25,7 +27,7 @@ public class UIController : MonoBehaviour
     [SerializeField] float _exitApplicationDelay;
 
     [Header("GameObject")]
-    [SerializeField] GameObject _cameraUI;
+    //[SerializeField] GameObject _cameraUI;
     [SerializeField] GameObjectVariable _cameraMain;
     [SerializeField] GameObjectVariable _GunCamera;
     [SerializeField] GameObjectVariable _playerGameObjectVariable;
@@ -33,17 +35,17 @@ public class UIController : MonoBehaviour
     private void Awake()
     {
         //on désactive le cursorLock
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Locked;
 
         //on initialise le menu principal et les cameras
-        _mainMenu.SetActive(true);
-        _cameraUI.SetActive(true);
-        _cameraUI.GetComponent<AudioListener>().enabled = true;
+        //_mainMenu.SetActive(true);
+        //_cameraUI.SetActive(false);
+        //_cameraUI.GetComponent<AudioListener>().enabled = true;
 
         if(_GunCamera.value != null)
         {
-            _GunCamera.value.GetComponent<AudioListener>().enabled = false;
+            _GunCamera.value.GetComponent<AudioListener>().enabled = true;
         }
 
         //_playerGameObjectVariable.value.SetActive(false);
@@ -63,13 +65,13 @@ public class UIController : MonoBehaviour
             setter.LoadPrefs();
         }
 
-        _playToggle.onValueChanged.AddListener(isOn =>
-        {
-            if (isOn)
-            {
-                _continueButton.Select();
-            }
-        });
+        //_playToggle.onValueChanged.AddListener(isOn =>
+        //{
+        //    if (isOn)
+        //    {
+        //        _continueButton.Select();
+        //    }
+        //});
 
         var toggles = Resources.FindObjectsOfTypeAll<Toggle>();
         foreach (var toggle in toggles)
@@ -87,55 +89,75 @@ public class UIController : MonoBehaviour
     private void Update()
     {
         //si on appuye sur ECHAP ou START alors on ative le cursor et timeScale = 0
-        if(Input.GetButton("PauseMenu"))
+        if(Input.GetButtonDown("PauseMenu")&& !_isActived)
         {
             //if (!EventSystem.current.IsPointerOverGameObject())
             //{
+            Cursor.lockState = CursorLockMode.None;
+            _handgunScriptVariable.value.enabled = false;
                 _pauseMenu.SetActive(true);
-                _cameraUI.SetActive(true);
-                _cameraMain.value.SetActive(false);
-                _playerGameObjectVariable.value.SetActive(false);
+                //_cameraUI.SetActive(true);
+                //_cameraMain.value.SetActive(false);
+                //_playerGameObjectVariable.value.SetActive(false);
                 _playToggle.SetIsOnWithoutNotify(true);
                 _playToggle.Select();
+                _isActived = true;
             //}
-        }
             
-        
+        }
+
+        else if (Input.GetButtonDown("PauseMenu") && _isActived)
+        {
+            _handgunScriptVariable.value.enabled = true;
+            //on désactive le menu principal et on passe sur la MainCamera
+            //_mainMenu.SetActive(false);
+            _pauseMenu.SetActive(false);
+            //_cameraUI.SetActive(false);
+            //_cameraMain.value.SetActive(true);
+            Debug.Log("main cam : " + _cameraMain.value);
+            //_cameraUI.GetComponent<AudioListener>().enabled = false;
+            //_GunCamera.value.GetComponent<AudioListener>().enabled = true;
+            //_playerGameObjectVariable.value.SetActive(true);
+            //on active le cursorLock
+           Cursor.lockState = CursorLockMode.Locked;
+            _isActived = false;
+        }
 
         if (_pauseMenu.activeSelf)
         {
             Time.timeScale = 0f;
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.lockState = CursorLockMode.None;
 
-            _cameraUI.GetComponent<AudioListener>().enabled = true;
-            _GunCamera.value.GetComponent<AudioListener>().enabled = false;
+            //_cameraUI.GetComponent<AudioListener>().enabled = true;
+            //_GunCamera.value.GetComponent<AudioListener>().enabled = false;
             //Debug.Log("TimeScale : <color=green>0</color>");
             //Debug.Log($"OnPause : <color=green>{_onPause}</color>");
         }
         else
         {
             Time.timeScale = 1f;
-            Cursor.lockState = CursorLockMode.Locked;
-            _playerGameObjectVariable.value.SetActive(true);
-            _cameraUI.GetComponent<AudioListener>().enabled = false;
-            _GunCamera.value.GetComponent<AudioListener>().enabled = true;
+            //Cursor.lockState = CursorLockMode.Locked;
+            //_playerGameObjectVariable.value.SetActive(true);
+            //_cameraUI.GetComponent<AudioListener>().enabled = false;
+            //_GunCamera.value.GetComponent<AudioListener>().enabled = true;
             //Debug.Log("TimeScale : <color=red>1</color>");
             //Debug.Log($"OnPause : <color=red>{_onPause}</color>");
         }
     }
 
-    public void SwitchCamera()
-    {
-        //on désactive le menu principal et on passe sur la MainCamera
-        _mainMenu.SetActive(false);
-        _cameraUI.SetActive(false);
-        _cameraMain.value.SetActive(true);
-        Debug.Log("main cam : " + _cameraMain.value);
-        _cameraUI.GetComponent<AudioListener>().enabled = false;
-        _GunCamera.value.GetComponent<AudioListener>().enabled = true;
-        //on active le cursorLock
-        Cursor.lockState = CursorLockMode.Locked;
-    }
+    //public void SwitchCamera()
+    //{
+    //    //on désactive le menu principal et on passe sur la MainCamera
+    //    //_mainMenu.SetActive(false);
+    //    //_cameraUI.SetActive(false);
+    //    _cameraMain.value.SetActive(true);
+    //    Debug.Log("main cam : " + _cameraMain.value);
+    //    //_cameraUI.GetComponent<AudioListener>().enabled = false;
+    //    _GunCamera.value.GetComponent<AudioListener>().enabled = true;
+    //    _playerGameObjectVariable.value.SetActive(true);
+    //    //on active le cursorLock
+    //    Cursor.lockState = CursorLockMode.Locked;
+    //}
 
     public void ExitApplication()
     {
@@ -192,14 +214,16 @@ public class UIController : MonoBehaviour
     //    _lastMousePosition = Input.mousePosition;
     //}
 
-    private GameObject _lastSelected;
-    private Vector2 _lastMousePosition;
+    //private GameObject _lastSelected;
+    //private Vector2 _lastMousePosition;
 
     private IEnumerator ExitApplicationCoroutine()
     {
-        yield return new WaitForSeconds(_exitApplicationDelay);
+        yield return new WaitForSecondsRealtime(_exitApplicationDelay);
 
         Debug.Log("Quit Game");
         Application.Quit();
     }
+
+    private bool _isActived;
 }
